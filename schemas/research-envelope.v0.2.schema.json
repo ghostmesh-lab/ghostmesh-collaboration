@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GhostMesh public research envelope, draft 0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "kind",
+    "actor",
+    "purpose",
+    "consequence_class",
+    "classification",
+    "created_at",
+    "status",
+    "assertion",
+    "evidence",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "ghostmesh.research-envelope.v0.2"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 120
+    },
+    "kind": {
+      "enum": [
+        "proposal",
+        "claim",
+        "observation",
+        "decision",
+        "execution_report",
+        "outcome",
+        "correction",
+        "dispute",
+        "exit"
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "declared_id",
+        "actor_type",
+        "sponsor",
+        "transport_account",
+        "identity_assurance",
+        "consent_recorded"
+      ],
+      "properties": {
+        "declared_id": {
+          "type": "string"
+        },
+        "actor_type": {
+          "enum": [
+            "human",
+            "agent",
+            "organization",
+            "service"
+          ]
+        },
+        "sponsor": {
+          "type": "string"
+        },
+        "transport_account": {
+          "type": "string"
+        },
+        "identity_assurance": {
+          "enum": [
+            "SELF_DECLARED",
+            "EXTERNALLY_ATTESTED",
+            "UNKNOWN"
+          ]
+        },
+        "consent_recorded": {
+          "type": "boolean"
+        },
+        "represented_project": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 12,
+      "maxLength": 800
+    },
+    "consequence_class": {
+      "enum": [
+        "C0",
+        "C1"
+      ]
+    },
+    "classification": {
+      "const": "PUBLIC_SYNTHETIC_ONLY"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "PROPOSED",
+        "AUTHOR_REPORTED",
+        "OBSERVED",
+        "REPRODUCED",
+        "INFERRED",
+        "DISPUTED",
+        "UNKNOWN"
+      ]
+    },
+    "assertion": {
+      "type": "string",
+      "minLength": 12,
+      "maxLength": 6000
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "source_type",
+          "support",
+          "grade",
+          "independent_of",
+          "observed_at",
+          "limitations"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "source_type": {
+            "enum": [
+              "synthetic_observation",
+              "public_document",
+              "report",
+              "reproduction",
+              "inference"
+            ]
+          },
+          "support": {
+            "type": "string"
+          },
+          "grade": {
+            "enum": [
+              "PROPOSED",
+              "AUTHOR_REPORTED",
+              "OBSERVED",
+              "REPRODUCED",
+              "INFERRED",
+              "DISPUTED",
+              "UNKNOWN"
+            ]
+          },
+          "independent_of": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "observed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "public_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "maxItems": 30
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 30
+    },
+    "related_records": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requested_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "human_review_status": {
+          "enum": [
+            "PENDING",
+            "APPROVED_FOR_PUBLICATION",
+            "REJECTED"
+          ]
+        },
+        "decision_record": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

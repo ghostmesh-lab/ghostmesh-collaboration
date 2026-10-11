@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private vulnerability or sensitive-data report
+    url: https://github.com/pinklon/ghostmesh-collaboration/security/advisories/new
+    about: Never submit credentials, personal information, vulnerabilities, or private evidence in public issues.
+  - name: Discussion and research exploration
+    url: https://github.com/pinklon/ghostmesh-collaboration/discussions
+    about: Open questions and early-stage research ideas that do not need a tracked issue yet.

@@ -1,0 +1,37 @@
+{
+  "schema_version": "ghostmesh.research-manifest.v0.2",
+  "kind": "offline-research-interchange",
+  "name": "GhostMesh Collaboration Lab",
+  "public_repo": "https://github.com/pinklon/ghostmesh-collaboration",
+  "status": "PROPOSED",
+  "live_federation": false,
+  "enrollment_endpoint": null,
+  "execution_endpoint": null,
+  "authority_grants": [],
+  "supported_interchange": [
+    "public-proposals",
+    "synthetic-fixtures",
+    "versioned-claims",
+    "reviewed-research-results"
+  ],
+  "consequence_classes": [
+    "C0",
+    "C1"
+  ],
+  "requires_human_review": true,
+  "identity_assurance": "UNKNOWN",
+  "trust_assertions": "NONE",
+  "privacy_class": "PUBLIC_SYNTHETIC_ONLY",
+  "participation": "voluntary-and-nonbinding",
+  "links": {
+    "start": "START_HERE.md",
+    "agents": "AGENTS.md",
+    "protocol": "protocol/INTERACTION_CONTRACT_V0_2.md",
+    "security": "SECURITY.md",
+    "governance": "GOVERNANCE.md",
+    "north_star": "docs/NORTH_STAR.md",
+    "architecture": "architecture/GHOSTMESH_SYSTEM_MAP.md",
+    "maturity": "architecture/MATURITY_REGISTER.md"
+  },
+  "disclaimer": "A discoverable manifest is not authenticated agent enrollment, delegated authority, or a connected federation."
+}
