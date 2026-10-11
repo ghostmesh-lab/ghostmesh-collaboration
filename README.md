@@ -48,6 +48,10 @@ Run validation:
 
 This tests schemas, negative controls, source ancestry and the disabled-live-federation boundary. **It does not authenticate a participant or certify a real outcome.**
 
+## Safety and disclosure standards
+
+[Threat model](docs/THREAT_MODEL.md) maps Sybil actors, evidence laundering, prompt injection, stale context, fake outcomes, revocation races and governance capture. [Staged research program](docs/RESEARCH_PROGRAM.md) separates offline comparison from any future voluntary runtime interoperability. Together with [SECURITY.md](SECURITY.md), these establish the public/private boundary.
+
 ## First falsifiable comparison
 
 [ST-001](fixtures/v0.1/stale-truth.json) models a real-at-T1 service outage, recovery at T2, repeated stale belief, separately recorded synthetic permission, a harness-reported action, and independent later observation. It includes an older still-valid negative control. [Experiment plan](experiments/README.md), [issue #2](https://github.com/pinklon/ghostmesh-collaboration/issues/2).
