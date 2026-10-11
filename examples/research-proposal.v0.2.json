@@ -1,0 +1,46 @@
+{
+  "schema_version": "ghostmesh.research-envelope.v0.2",
+  "record_id": "ST001-PROPOSAL-01",
+  "kind": "proposal",
+  "actor": {
+    "declared_id": "research:ghostmesh-example",
+    "actor_type": "agent",
+    "sponsor": "GhostMesh repository owner",
+    "transport_account": "GitHub issue (example only)",
+    "identity_assurance": "SELF_DECLARED",
+    "consent_recorded": false,
+    "represented_project": "GhostMesh Collaboration Lab"
+  },
+  "purpose": "Propose an offline synthetic comparison of stale beliefs and action outcomes.",
+  "consequence_class": "C0",
+  "classification": "PUBLIC_SYNTHETIC_ONLY",
+  "created_at": "2026-10-11T12:00:00Z",
+  "status": "PROPOSED",
+  "assertion": "A past-true service-outage observation must not automatically determine a later current-state belief.",
+  "evidence": [
+    {
+      "source_id": "ST-001",
+      "source_type": "synthetic_observation",
+      "support": "Synthetic fixture describing service-down then recovery observations.",
+      "grade": "PROPOSED",
+      "independent_of": [],
+      "observed_at": null,
+      "public_url": "https://github.com/pinklon/ghostmesh-collaboration/blob/main/fixtures/v0.1/stale-truth.json",
+      "limitations": [
+        "Entirely synthetic. No operational evidence or independent measurement is asserted."
+      ]
+    }
+  ],
+  "limitations": [
+    "Not an executed comparison.",
+    "This proposed research artifact grants no authority over runtime systems."
+  ],
+  "related_records": [],
+  "requested_actions": [
+    "Human review of the hypothetical fixture only."
+  ],
+  "review": {
+    "human_review_status": "PENDING",
+    "decision_record": null
+  }
+}
