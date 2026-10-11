@@ -2,7 +2,6 @@
 """Read-only PR metadata admissions. Labels are review state, not authority."""
 import json
 import os
-from pathlib import Path
 
 FAMILIES=("type:","area:","status:","risk:","priority:")
 ALLOWED_RISK={"risk:C0-public-read","risk:C1-repo-change"}
@@ -30,7 +29,10 @@ def main():
     if os.environ.get("GITHUB_EVENT_NAME")!="pull_request":
         print("PASS: PR metadata gate not applicable to non-PR event")
         return
-    event=json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
+    raw=os.environ.get("GH_PR_METADATA_JSON")
+    if not raw:
+        raise SystemExit("BLOCK: required PR metadata was not supplied")
+    event={"pull_request": json.loads(raw)}
     issues=validate(event)
     for issue in issues:
         print("BLOCK:",issue)
