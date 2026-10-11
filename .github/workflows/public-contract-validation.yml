@@ -2,6 +2,7 @@ name: Public contract validation
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled, edited]
   push:
     branches: [main]
 
