@@ -4,7 +4,7 @@
 
 ## Authority
 
-- Repository owner: **pinklon**. Only the repository owner and explicitly appointed maintainers may merge, manage settings, or assign access.
+- Repository owner: the **ghostmesh-lab** GitHub organization, initially administered by **pinklon**. Only authorized organization owners or explicitly appointed maintainers may manage repository settings or grant access; merging remains subject to protected branch rules.
 - Other participants can read the public repository and propose changes through issues and pull requests, subject to GitHub permissions.
 - Maintainers review contributions for scope, safety, attribution, licensing, reproducibility, and consent.
 - Repository issues, reviews, approvals, comments, and consensus **do not** grant rights to operate GhostMesh or another participant's systems.
