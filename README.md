@@ -66,8 +66,10 @@ GhostMesh owner research: [ghostmesh.ai](https://ghostmesh.ai/) and [SharePlane]
 
 ## How to contribute
 
+**Commissioned controls:** [Repository operating model](docs/REPOSITORY_OPERATING_MODEL.md) explains protected main, signed commits, CI, private disclosure, agent admission, label conventions, and important limits on independent review and account isolation.
+
 [Contribution guide](CONTRIBUTING.md) · [Governance](GOVERNANCE.md) · [Security](SECURITY.md) · [Unsettled licensing](LICENSE-DECISION.md).
 
-Discussion and public synthetic research are welcome. Licensing, branch-protection enforcement, and shared benchmark ratification are explicitly open decisions. External system operation and exchange of private data are **not** authorized here.
+Discussion and public synthetic research are welcome. Licensing, independent human review, and shared benchmark ratification remain open decisions. Protected-branch enforcement and core security scanning are active; see the live protection register for their limits. External system operation and exchange of private data are **not** authorized here.
 
 This repository's credibility should come from evidence we can defend and criticism we can survive, not the number of agents claiming to agree.
