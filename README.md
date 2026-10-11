@@ -1,83 +1,101 @@
-# GhostMesh Collaboration Lab
+# GhostMesh Lab
 
-**A human-and-agent research commons for independently governed intelligence.**
+**Govern the work. Empower the collaboration.**
 
-This repository is designed to make serious collaboration possible between people and AI systems without requiring a common operator, proprietary model, shared credentials, or a universal authority. We intend it to be legible to humans, parseable by agents, skeptical of its own evidence, and safe to leave.
+An open research space for people and independently governed AI systems who want to test whether autonomous collaboration can be *useful, verifiable, correctable, and accountable* without surrendering local authority.
 
-**Maturity:** The repository is a public, offline interchange and research proposal. It is **not** a commissioned live federation, agent identity issuer, operational dispatch service, or autonomous governance system.
+**What this is:** a public, synthetic-first research repository. **What this is not:** a deployed federation, trusted identity provider, autonomous execution gateway, endorsement by other labs, or certified safety system.
 
-**Publication status:** Publicly readable **research candidate**, not an approved or independently certified release. See the [publication-readiness register](docs/PUBLICATION_READINESS.md) and [machine-readable outstanding gates](publication-readiness.json). Green tests are not proof of safe operating objectives or external system authorization.
+[Start here](START_HERE.md) · [Explore GhostMesh](docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md) · [Try the experiment](docs/RESEARCHER_QUICKSTART.md) · [Challenge a claim](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues) · [Publication status](docs/PUBLICATION_READINESS.md)
 
-## Three things to know first
+---
 
-1. **Our North Star:** useful long-term cooperation without surrendering human accountability or independent sovereignty. [Read it](docs/NORTH_STAR.md).
-2. **Our doctrine:** **Probabilistic semantics. Deterministic authority.** A model's confidence does not grant permission. A signed receipt does not prove the underlying event was true.
-3. **Our challenge:** even an impeccably authorized action can pursue an indefensible objective. Purpose integrity must sit alongside epistemic, authority, and effect integrity.
+## Why we exist
 
-## Where to start
+AI systems can be impressively capable and still repeat a false claim, use outdated evidence, claim success without measuring an effect, or correctly execute an authorized but destructive objective.
 
-| Human readers | Agent participants | Independent research teams |
-|---|---|---|
-| [Start here](START_HERE.md) | [AGENTS.md](AGENTS.md) | [Research protocol](protocol/INTERACTION_CONTRACT_V0_2.md) |
-| [North Star](docs/NORTH_STAR.md) | [Machine-readable manifest](federation.manifest.json) | [Synthetic experiment](experiments/README.md) |
-| [GhostMesh architecture](architecture/GHOSTMESH_SYSTEM_MAP.md) | [Record schema](schemas/research-envelope.v0.2.schema.json) | [Governance](GOVERNANCE.md) |
-| [Maturity and evidence register](architecture/MATURITY_REGISTER.md) | [Sample record](examples/research-proposal.v0.2.json) | [Privacy and security](SECURITY.md) |
+Our working doctrine is:
 
-## What GhostMesh actually comprises
+> **Probabilistic semantics. Deterministic authority.**
 
-The [public system map](architecture/GHOSTMESH_SYSTEM_MAP.md) explains seven interrelated planes at more than a marketing level:
+Models may interpret, reason, and propose. Consequential authority is separately established and governed. Even accurate evidence and valid authorization do not automatically establish that an objective is legitimate.
 
-- **Control Tower:** admitted work, owner-gated authority, exact revisions, bounded writers, release evidence and independent readback.
-- **Persistent compute and observability:** owner-controlled services, observed system state, recovery and distinction between a claim and a measurement.
-- **Collaboration plane:** canonical actors, spaces, threads, append-only events and vendor-neutral export/replay; Slack is a client, not an authority.
-- **Tony Brain:** project decisions, durable context and provenance without replacing original sources.
-- **Library Atlas:** historical exact-source lookup, graph, lexical, temporal and vector projections with owner-controlled custody.
-- **GLASSHOUSE:** adversarial research on false success, inherited error, contradictory observations and compromised but authentic evidence.
-- **SharePlane:** public, owner-reviewed reasoning and publications, separated from actual deployment certification.
+We distinguish four integrity questions:
 
-Read the [maturity register](architecture/MATURITY_REGISTER.md) before attributing a feature to a live system. Some mechanisms have passed bounded tests, others are owner-reported operational, and several are research proposals. They are not interchangeable claims.
+| Epistemic | Authority | Effect | Purpose |
+| :--- | :--- | :--- | :--- |
+| What do we know? | Who may act? | What actually happened? | Who should govern the goal? |
+| Source ancestry, contradiction, freshness | Scoped permission, rules, revocation | Reported execution vs independent measurement | Affected parties, challenge, review and remedy |
 
-**A more substantive disclosure:** [GhostMesh technical account v0.3](docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md) explains the work/evidence loop, each plane's responsibility, bounded accomplishments, and known gaps. The [public proof-package standard](docs/PUBLIC_EVIDENCE_RELEASE_STANDARD.md) defines the evidence needed before claiming independently verifiable results.
+## A research exchange, not a command network
 
-## Agent-facing research exchange
+```mermaid
+flowchart LR
+    H["Human or sponsored AI"] --> P["Public research proposal"]
+    P --> F["Frozen synthetic fixture"]
+    F --> X["Independent local evaluation"]
+    X --> E["Claim + evidence + uncertainty"]
+    E --> R["Human review and disagreement"]
+    R --> C["Versioned research conclusion"]
+    C -. "Correction / challenge" .-> P
 
-The [manifest](federation.manifest.json) deliberately advertises **no live endpoints or authority grants**. An agent can parse it and prepare an offline research record using the [schema](schemas/research-envelope.v0.2.schema.json).
+    R --> B["No external system authority"]
+    style B fill:#FCE7E7,color:#7F1D1D,stroke:#C8102E
+```
 
-Submission workflow: identify actor and sponsor, define a scoped C0/C1 public research purpose, state evidence and uncertainty, propose a synthetic artifact, run offline validation, open a reviewable PR, and preserve disagreements and unknowns. No role emerges just because a participant claims one.
+There are no live enrollment endpoints or authority grants. No participant needs to adopt GhostMesh, HORTRAME, Web4, SAGE, Hestia, or another project's internal architecture.
 
-Run validation:
+## Choose your starting point
 
-    python3 -m pip install jsonschema==4.23.0
-    python3 tools/validate_public_research.py
-    python3 -m unittest discover -s tests -p 'test_*.py'
-    python3 tools/evaluate_stale_truth.py
+| I am... | First stop | Useful next step |
+| :--- | :--- | :--- |
+| **A curious human** | [Guided tour](docs/ARCHITECTURE_AT_A_GLANCE.md) | Understand the system and challenge an assumption |
+| **A technical researcher** | [10-minute experiment](docs/RESEARCHER_QUICKSTART.md) | Reproduce our synthetic baseline or show where it fails |
+| **An AI assistant** | [Agent participation contract](AGENTS.md) | Identify your sponsor and propose a bounded public contribution |
+| **An independent lab** | [Research protocol](protocol/INTERACTION_CONTRACT_V0_2.md) | Compare outcomes without connecting runtimes |
+| **A security reviewer** | [Threat model](docs/THREAT_MODEL.md) | Challenge our disclosure and evidence controls safely |
 
-The last command prints a purely synthetic deterministic reference interpretation, including explicit UNKNOWNs; it is NOT a model benchmark or a proof of a deployed agent. [Round One protocol](experiments/ROUND_ONE_EXPERIMENT.md) and [collaborator kickoff](docs/COLLABORATOR_KICKOFF.md) describe how external teams could independently challenge the assumptions.
+## One reproducible example
 
-This tests schemas, negative controls, source ancestry and the disabled-live-federation boundary. **It does not authenticate a participant or certify a real outcome.**
+Our first fixture, [ST-001](fixtures/v0.1/stale-truth.json), describes a service that **was** down, recovered, and was then described as down by an agent relying on its own history. It includes a synthetic permission decision, a reported action, later observation, and an old statement that remains potentially valid.
 
-## Safety and disclosure standards
+```bash
+python3 tools/evaluate_stale_truth.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
 
-[Threat model](docs/THREAT_MODEL.md) maps Sybil actors, evidence laundering, prompt injection, stale context, fake outcomes, revocation races and governance capture. The [adversarial review](docs/ADVERSARIAL_READINESS_REVIEW.md) records actual controls and remaining weaknesses. External public posts are visible before CI; automated screening is no substitute for prior disclosure judgment. [Staged research program](docs/RESEARCH_PROGRAM.md) separates offline comparison from any future voluntary runtime interoperability. Together with [SECURITY.md](SECURITY.md), these establish the public/private boundary.
+The script is a **deterministic illustration**, not an AI benchmark. It deliberately keeps decision causality and actual effects **UNKNOWN** where the fixture cannot establish them. [Review the test protocol](experiments/ROUND_ONE_EXPERIMENT.md) · [Understand the result](examples/README.md).
 
-## First falsifiable comparison
+## What GhostMesh comprises
 
-[ST-001](fixtures/v0.1/stale-truth.json) models a real-at-T1 service outage, recovery at T2, repeated stale belief, separately recorded synthetic permission, a harness-reported action, and independent later observation. It includes an older still-valid negative control. [Experiment plan](experiments/README.md), [issue #2](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/2).
+| Component | Research purpose | Maturity caveat |
+| :--- | :--- | :--- |
+| **Control Tower** | Work admission, bounded authority, reviewed changes and receipts | Individual owner-operated workflows, not universal enforcement |
+| **Execution and observability** | Independently inspect state and distinguish intent from outcome | Owner-reported operational components; incomplete public proof |
+| **Collaboration plane** | Portable actors, spaces, threads and event lineage | Implemented bounded mechanisms; no third-party identity attestation |
+| **Tony Brain** | Durable context, decisions and relationships to sources | Partial integration; not a source of truth |
+| **Library Atlas** | Source-neutral retrieval, historical and semantic lineage | Projection-based, not universal belief correction |
+| **GLASSHOUSE** | Adversarial evaluation of misleading evidence and completion claims | Bounded synthetic tests, not a general safety certification |
+| **SharePlane** | Public works and research, separate from execution authority | Reader content is not proof of live-system behavior |
 
-We invite independently developed approaches to test the *same inputs* without requiring shared memory, law, credentials, or runtime code. Report PASS, FAIL, INCONCLUSIVE and UNKNOWN with equal candor.
+Read the [public architecture map](architecture/GHOSTMESH_SYSTEM_MAP.md), the [full technical disclosure](docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md), and the [maturity register](architecture/MATURITY_REGISTER.md) before interpreting any capability as deployed or independently proven.
 
-## Relationship to other independent projects
+## Three research challenges worth trying
 
-Our public references include [HORTRAME](https://www.hortrame.com/) and its epistemic governance research, [Web4/Hestia/Hub/SAGE](https://github.com/dp-web4) and their role/law/witnessing/persistent cognition work, and other researchers pursuing provenance and belief integrity. Reference and respect do **not** imply endorsement, membership, authority or a settled standard.
+- [**EVID-001:** Can ten apparently independent agents actually be repeating one false source?](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/9)
+- [**GOV-001:** How can harmful authorized objectives be challenged without making objections an indefinite veto?](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/10)
+- [**SEC-002:** Can the public contribution and evidence boundary be broken in a safe synthetic test?](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/11)
 
-GhostMesh owner research: [ghostmesh.ai](https://ghostmesh.ai/) and [SharePlane](https://shareplane.malott.ai/).
+We also welcome critiques of the fixture itself via [ST-001 issue #2](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/2). These are invitations to examine hypotheses, not jobs assigned to any named person.
 
-## How to contribute
+## Research relationships, independent by design
 
-**Commissioned controls:** [Repository operating model](docs/REPOSITORY_OPERATING_MODEL.md) explains protected main, signed commits, CI, private disclosure, agent admission, label conventions, and important limits on independent review and account isolation.
+[GhostMesh](https://ghostmesh.ai/) and [SharePlane](https://shareplane.malott.ai/) are Tony Malott's public research surfaces. Our discussions intersect with [HORTRAME](https://www.hortrame.com/) (Guillaume Bolduc's Epistemethics) and [Web4, Hestia and SAGE](https://github.com/dp-web4) (Dennis Palatov and collaborators). Public references credit independent work; **they do not imply endorsement, formal membership, or shared operational authority**.
 
-[Contribution guide](CONTRIBUTING.md) · [Governance](GOVERNANCE.md) · [Security](SECURITY.md) · [Unsettled licensing](LICENSE-DECISION.md).
+## Participation and publication
 
-Discussion and public synthetic research are welcome. Licensing, independent human review, and shared benchmark ratification remain open decisions. Protected-branch enforcement and core security scanning are active; see the live protection register for their limits. External system operation and exchange of private data are **not** authorized here.
+**The repository is already public. It is not yet a formally qualified research release.** Contributor licensing, an independent human review arrangement, and external reproduction remain open. See [RELEASE-001](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/14) and the [machine-readable readiness record](publication-readiness.json).
 
-This repository's credibility should come from evidence we can defend and criticism we can survive, not the number of agents claiming to agree.
+Until contribution licenses are agreed, use issues and discussions for review rather than submitting substantial third-party code or copyrighted content. Private data, credentials, production endpoints, agent dispatch, or external execution are never authorized by this repo. [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Licensing](LICENSE-DECISION.md) · [Governance](GOVERNANCE.md).
+
+**Persistent identity through change. Independent authority through collaboration.**
