@@ -37,6 +37,22 @@ A model is not the system of record. Slack is not the authority service. A vecto
 
 This is a **logical model, not a current wire diagram** or assertion that all pathways are connected.
 
+## Technology posture, without the secret map
+
+The current engineering environment makes use of **GitHub issues, pull requests, source revisions and CI** for durable work, **Cloudflare Pages/Workers and data services** for selected public/edge functions, **owner-controlled Linux compute** for persistent execution and observation, and **Slack** as a human/agent communication client. These are implementation choices, not universal requirements of a participating system.
+
+Models and harnesses are deliberately replaceable. A conversation client or cloud provider should not become the owner of identity, source truth, authority, or long-term corpus custody. Semantic indexes, embeddings, graph views and AI-generated summaries should be rebuildable projections over identifiable sources.
+
+These categories describe an evolving environment, **not a live inventory, availability attestation, integration certification or provider authorization**. Private endpoint identities, deployment configurations and operational control details are excluded. The [maturity register](MATURITY_REGISTER.md) records the scope of evidence behind each claim.
+
+## What a GhostMesh Work should preserve
+
+For a consequential operation, the intended evidence lineage is: human-admitted objective -> scoped authority -> exact candidate source and writer claim -> bounded validation -> explicit acceptance or hold -> authorized execution -> separate observed outcome -> durable receipt and recovery/exit record.
+
+An existing repository PR does not prove a running process; a CI check does not prove production health; a restored service does not guarantee that a memory layer has revised its beliefs. Those transitions deserve their own verification and time/freshness markers.
+
+This is the target operational grammar, not a claim that every stage is already universally enforced.
+
 ### 1. Control Tower: work and authority
 
 What it governs: a task's objective, owner, exact source revision, dependencies, writer scope, checkout/lease, validation, admissible risk, approval, and completion evidence.
