@@ -23,7 +23,8 @@
     },
     "record_id": {
       "type": "string",
-      "minLength": 4
+      "minLength": 4,
+      "maxLength": 120
     },
     "kind": {
       "enum": [
@@ -79,11 +80,13 @@
         "represented_project": {
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "purpose": {
       "type": "string",
-      "minLength": 12
+      "minLength": 12,
+      "maxLength": 800
     },
     "consequence_class": {
       "enum": [
@@ -111,7 +114,8 @@
     },
     "assertion": {
       "type": "string",
-      "minLength": 12
+      "minLength": 12,
+      "maxLength": 6000
     },
     "evidence": {
       "type": "array",
@@ -177,15 +181,18 @@
               "type": "string"
             }
           }
-        }
-      }
+        },
+        "additionalProperties": false
+      },
+      "maxItems": 30
     },
     "limitations": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "string"
-      }
+      },
+      "maxItems": 30
     },
     "related_records": {
       "type": "array",
@@ -215,7 +222,8 @@
             "null"
           ]
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }
