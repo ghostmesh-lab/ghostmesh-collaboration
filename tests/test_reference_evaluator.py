@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Self-contained negative tests for a purely synthetic reference evaluator."""
 import copy
+import hashlib
 import json
 import sys
 import unittest
@@ -24,6 +25,14 @@ class StaleTruthReference(unittest.TestCase):
         self.assertEqual(result["remediation_authority"], "NOT_GRANTED")
         self.assertTrue(result["stale_claim"]["contradicted_by_later_observation"])
         self.assertEqual(result["negative_control"]["result"], "OLD_DOES_NOT_IMPLY_INVALID")
+
+    def test_checked_in_reference_reproducible(self):
+        """A changed fixture or evaluator cannot silently alter the published baseline."""
+        raw = (ROOT / "fixtures/v0.1/stale-truth.json").read_bytes()
+        expected = json.loads((ROOT / "examples/stale-truth-reference-output.json").read_text())
+        actual = assess(json.loads(raw))
+        actual["fixture_sha256"] = hashlib.sha256(raw).hexdigest()
+        self.assertEqual(actual, expected)
 
     def test_later_observation_changes_verdict(self):
         altered = copy.deepcopy(self.fixture)

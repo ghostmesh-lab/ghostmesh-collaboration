@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate the public, offline research package. No network or execution."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 from jsonschema import Draft202012Validator, FormatChecker
@@ -43,6 +44,19 @@ def main():
     bad = copy.deepcopy(example)
     del bad["actor"]
     check(not validator.is_valid(bad), "Missing actor accepted")
+
+    result_schema = load("schemas/research-result.v0.1.schema.json")
+    Draft202012Validator.check_schema(result_schema)
+    result_validator = Draft202012Validator(result_schema, format_checker=FormatChecker())
+    template = load("examples/research-result-template.v0.1.json")
+    check(result_validator.is_valid(template), "Research result template fails schema")
+    check(template["status"] == "EXAMPLE_NOT_RUN" and template["human_review"] == "PENDING",
+          "Unexecuted example cannot claim a verified result")
+    check(len({c["claim_id"] for c in template["claims"]}) == len(template["claims"]),
+          "Duplicate claim identifiers")
+    fixture_bytes = (ROOT / "fixtures/v0.1/stale-truth.json").read_bytes()
+    check(template["fixture_sha256"] == hashlib.sha256(fixture_bytes).hexdigest(),
+          "Result template fixture digest does not match the actual published input")
 
     manifest = load("federation.manifest.json")
     check(manifest["live_federation"] is False, "Cannot advertise live federation")

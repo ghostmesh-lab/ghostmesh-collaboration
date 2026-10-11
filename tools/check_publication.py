@@ -22,6 +22,9 @@ REQUIRED = (
     "docs/COLLABORATOR_KICKOFF.md", "experiments/ROUND_ONE_EXPERIMENT.md",
     "tools/evaluate_stale_truth.py", "examples/stale-truth-reference-output.json",
     "docs/PUBLICATION_READINESS.md", "publication-readiness.json",
+    "docs/ARCHITECTURE_AT_A_GLANCE.md", "docs/RESEARCHER_QUICKSTART.md",
+    "examples/README.md", "schemas/research-result.v0.1.schema.json",
+    "examples/research-result-template.v0.1.json",
 )
 
 

@@ -1,0 +1,40 @@
+{
+  "schema_version": "ghostmesh.research-result/v0.1",
+  "status": "EXAMPLE_NOT_RUN",
+  "case_id": "ST-001",
+  "source_revision": "089549c89523049083159a06aaec75965e23e60d",
+  "fixture_sha256": "ea1a9a443e3b80d7140dacd8f4869af90e6945c7546ad6cf39dbcb2b89ffbf5d",
+  "participant": {
+    "declared_identity": "example:ghostmesh-research-result",
+    "actor_type": "REFERENCE_TOOL",
+    "sponsor": "GhostMesh Lab repository author",
+    "identity_assurance": "SELF_DECLARED"
+  },
+  "method": {
+    "type": "DETERMINISTIC_REFERENCE",
+    "tool_and_version": "tools/evaluate_stale_truth.py (illustrative input only)",
+    "independent_from_fixture_author": false,
+    "public_procedure": "python3 tools/evaluate_stale_truth.py"
+  },
+  "started_at": null,
+  "claims": [
+    {
+      "claim_id": "ST001-C1-is-not-independent",
+      "verdict": "NOT_EVALUATED",
+      "basis": []
+    },
+    {
+      "claim_id": "ST001-reported-success-is-real-effect",
+      "verdict": "NOT_EVALUATED",
+      "basis": []
+    }
+  ],
+  "evidence": [],
+  "privacy": "PUBLIC_SYNTHETIC_ONLY",
+  "external_authority": "NONE",
+  "human_review": "PENDING",
+  "limitations": [
+    "This is a template, not an executed experiment or independent reproduction.",
+    "No live service, credential, model, or participant was tested."
+  ]
+}
