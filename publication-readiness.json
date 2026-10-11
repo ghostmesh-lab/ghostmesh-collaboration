@@ -1,0 +1,45 @@
+{
+  "schema": "ghostmesh.publication-readiness/v0.1",
+  "repository": "https://github.com/ghostmesh-lab/ghostmesh-collaboration",
+  "status": "CANDIDATE_NOT_RELEASED",
+  "description": "Human and agent public research repository; not a deployed federation, proof of live operation, or general certification.",
+  "as_of": "2026-10-11",
+  "agent_authority_granted": false,
+  "live_federation": false,
+  "scope": "Documentation, synthetic reference experiment, source-grounded contracts, and bounded security tests",
+  "release_gates": {
+    "license": "OPEN_UNRATIFIED",
+    "owner_disclosure_review": "REQUIRED",
+    "independent_human_review": "NOT_CONFIGURED",
+    "independent_external_reproduction": "NOT_PERFORMED",
+    "vps_credentials": "EXTERNAL_ACCOUNT_SCOPE_UNRESOLVED",
+    "automated_static_contract": "CHECKED_BY_CI",
+    "public_links": "CHECKED_LOCALLY_NO_NETWORK"
+  },
+  "unresolved": [
+    "Code and document contribution licensing unresolved: issue #1.",
+    "Independent reviewer or owner-approved alternative not established: issue #3.",
+    "No independently reproduced operational GhostMesh evidence: issue #12.",
+    "Owner-controlled VPS GitHub machine token has broader access than public collaboration needs, handled outside this public repo."
+  ],
+  "artifact_classes": [
+    "public docs",
+    "synthetic fixture",
+    "reference evaluator"
+  ],
+  "excluded": [
+    "private source",
+    "secrets and credentials",
+    "live topology",
+    "personal/private source material",
+    "cross-system agent admission",
+    "external agent dispatch"
+  ],
+  "evidence_links": {
+    "documentation": "docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md",
+    "security": "SECURITY.md",
+    "release_policy": "docs/PUBLICATION_READINESS.md",
+    "experiment": "experiments/ROUND_ONE_EXPERIMENT.md",
+    "testing": "tests/README.md"
+  }
+}

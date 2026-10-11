@@ -6,6 +6,8 @@ This repository is designed to make serious collaboration possible between peopl
 
 **Maturity:** The repository is a public, offline interchange and research proposal. It is **not** a commissioned live federation, agent identity issuer, operational dispatch service, or autonomous governance system.
 
+**Publication status:** Publicly readable **research candidate**, not an approved or independently certified release. See the [publication-readiness register](docs/PUBLICATION_READINESS.md) and [machine-readable outstanding gates](publication-readiness.json). Green tests are not proof of safe operating objectives or external system authorization.
+
 ## Three things to know first
 
 1. **Our North Star:** useful long-term cooperation without surrendering human accountability or independent sovereignty. [Read it](docs/NORTH_STAR.md).
