@@ -54,7 +54,7 @@ This tests schemas, negative controls, source ancestry and the disabled-live-fed
 
 ## First falsifiable comparison
 
-[ST-001](fixtures/v0.1/stale-truth.json) models a real-at-T1 service outage, recovery at T2, repeated stale belief, separately recorded synthetic permission, a harness-reported action, and independent later observation. It includes an older still-valid negative control. [Experiment plan](experiments/README.md), [issue #2](https://github.com/pinklon/ghostmesh-collaboration/issues/2).
+[ST-001](fixtures/v0.1/stale-truth.json) models a real-at-T1 service outage, recovery at T2, repeated stale belief, separately recorded synthetic permission, a harness-reported action, and independent later observation. It includes an older still-valid negative control. [Experiment plan](experiments/README.md), [issue #2](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/2).
 
 We invite independently developed approaches to test the *same inputs* without requiring shared memory, law, credentials, or runtime code. Report PASS, FAIL, INCONCLUSIVE and UNKNOWN with equal candor.
 

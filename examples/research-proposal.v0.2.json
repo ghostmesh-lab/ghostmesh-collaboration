@@ -25,7 +25,7 @@
       "grade": "PROPOSED",
       "independent_of": [],
       "observed_at": null,
-      "public_url": "https://github.com/pinklon/ghostmesh-collaboration/blob/main/fixtures/v0.1/stale-truth.json",
+      "public_url": "https://github.com/ghostmesh-lab/ghostmesh-collaboration/blob/main/fixtures/v0.1/stale-truth.json",
       "limitations": [
         "Entirely synthetic. No operational evidence or independent measurement is asserted."
       ]

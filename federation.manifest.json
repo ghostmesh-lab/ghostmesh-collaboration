@@ -2,7 +2,7 @@
   "schema_version": "ghostmesh.research-manifest.v0.2",
   "kind": "offline-research-interchange",
   "name": "GhostMesh Collaboration Lab",
-  "public_repo": "https://github.com/pinklon/ghostmesh-collaboration",
+  "public_repo": "https://github.com/ghostmesh-lab/ghostmesh-collaboration",
   "status": "PROPOSED",
   "live_federation": false,
   "enrollment_endpoint": null,

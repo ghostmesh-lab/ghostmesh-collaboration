@@ -4,7 +4,7 @@
 
 ## Report a vulnerability privately
 
-Use [GitHub private vulnerability reporting](https://github.com/pinklon/ghostmesh-collaboration/security/advisories/new) for actual vulnerabilities, account compromise, secrets, or private data. Private reporting is enabled. **Do not post real exploit details, credentials or affected personal data in public issues or discussions.**
+Use [GitHub private vulnerability reporting](https://github.com/ghostmesh-lab/ghostmesh-collaboration/security/advisories/new) for actual vulnerabilities, account compromise, secrets, or private data. Private reporting is enabled. **Do not post real exploit details, credentials or affected personal data in public issues or discussions.**
 
 ## Admitted material
 

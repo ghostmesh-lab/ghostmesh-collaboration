@@ -1,6 +1,6 @@
 # Repository operating model and protection register
 
-**Owner-verified snapshot: 2026-10-11.** This is a disclosure of the public research repository's governance state, not an audit or guarantee of the owner's entire GitHub account. Recheck live settings after changes.
+**Owner-verified initial setup: 2026-10-11; organization transfer: 2026-10-11.** This is a disclosure of the public research repository's governance state, not an audit or guarantee of the owner's entire GitHub account. Recheck live settings after changes.
 
 ## Separation of concerns
 
@@ -13,7 +13,7 @@ An outside collaborator may read, comment, and propose through GitHub's normal p
 | Control | State |
 |---|---|
 | Visibility | Public |
-| Maintainer/collaborators | Owner account only at commissioning |
+| Maintainer/collaborators | Organization owner/admin **pinklon** only after transfer; no external collaborators admitted |
 | Default branch | `main` |
 | Change entry | PR required; force pushes and deletion disabled |
 | Branch admin bypass | Administrators covered by protection |
@@ -45,7 +45,7 @@ Only the owner can approve changes to protected files for now. GitHub cannot pro
 
 See [SECURITY.md](../SECURITY.md) and use GitHub's **private vulnerability reporting** for sensitive findings. Every public issue/PR can be mirrored permanently. Public text checkers and platform scanning only catch recognized patterns. Human disclosure review is required for anything copied from external research, logs or private sources.
 
-The named owner account remains visible on GitHub because this repository is owned by that account. Stronger identity separation would require a dedicated organization or another repository owner and a repo-scoped installation. That would be a separate consented migration, not an automatic consequence of joining this lab.
+The repository is owned by the **ghostmesh-lab** GitHub Free organization, not directly by the personal account. **pinklon** remains the initial organization owner and GitHub administrator. Organizational ownership separates collaborator administration and repository namespace, but does not eliminate the risks associated with a compromised administrator login or a broadly scoped machine credential. See [ORGANIZATION_SECURITY_BOUNDARY.md](ORGANIZATION_SECURITY_BOUNDARY.md).
 
 ## Board and workflow organization
 
@@ -61,9 +61,9 @@ Two GitHub milestones organize the work: security/agent admission commissioning 
 
 ## Unresolved decisions
 
-- [Licensing and contribution rights](https://github.com/pinklon/ghostmesh-collaboration/issues/1).
-- [First shared benchmark ratification](https://github.com/pinklon/ghostmesh-collaboration/issues/2).
-- [Repository governance and future independent review](https://github.com/pinklon/ghostmesh-collaboration/issues/3).
+- [Licensing and contribution rights](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/1).
+- [First shared benchmark ratification](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/2).
+- [Repository governance and future independent review](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/3).
 - Separate organizational identity and least-privilege automation credentials if the owner decides to go beyond personal account ownership.
 
 **Review baseline:** Reassess these settings, collaborators, webhooks, installed actions, security alerts and any new repository secrets before admitting external agent automation.
