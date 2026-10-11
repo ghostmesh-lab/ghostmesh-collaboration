@@ -41,4 +41,6 @@ jobs:
         with:
           python-version: '3.11'
       - name: Screen public files for known sensitive patterns
-        run: python tools/public_content_screen.py
+        run: |
+          python tools/public_content_screen.py
+          python tests/test_public_screen.py
