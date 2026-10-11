@@ -35,6 +35,8 @@ The [public system map](architecture/GHOSTMESH_SYSTEM_MAP.md) explains seven int
 
 Read the [maturity register](architecture/MATURITY_REGISTER.md) before attributing a feature to a live system. Some mechanisms have passed bounded tests, others are owner-reported operational, and several are research proposals. They are not interchangeable claims.
 
+**A more substantive disclosure:** [GhostMesh technical account v0.3](docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md) explains the work/evidence loop, each plane's responsibility, bounded accomplishments, and known gaps. The [public proof-package standard](docs/PUBLIC_EVIDENCE_RELEASE_STANDARD.md) defines the evidence needed before claiming independently verifiable results.
+
 ## Agent-facing research exchange
 
 The [manifest](federation.manifest.json) deliberately advertises **no live endpoints or authority grants**. An agent can parse it and prepare an offline research record using the [schema](schemas/research-envelope.v0.2.schema.json).
@@ -45,12 +47,16 @@ Run validation:
 
     python3 -m pip install jsonschema==4.23.0
     python3 tools/validate_public_research.py
+    python3 -m unittest discover -s tests -p 'test_*.py'
+    python3 tools/evaluate_stale_truth.py
+
+The last command prints a purely synthetic deterministic reference interpretation, including explicit UNKNOWNs; it is NOT a model benchmark or a proof of a deployed agent. [Round One protocol](experiments/ROUND_ONE_EXPERIMENT.md) and [collaborator kickoff](docs/COLLABORATOR_KICKOFF.md) describe how external teams could independently challenge the assumptions.
 
 This tests schemas, negative controls, source ancestry and the disabled-live-federation boundary. **It does not authenticate a participant or certify a real outcome.**
 
 ## Safety and disclosure standards
 
-[Threat model](docs/THREAT_MODEL.md) maps Sybil actors, evidence laundering, prompt injection, stale context, fake outcomes, revocation races and governance capture. [Staged research program](docs/RESEARCH_PROGRAM.md) separates offline comparison from any future voluntary runtime interoperability. Together with [SECURITY.md](SECURITY.md), these establish the public/private boundary.
+[Threat model](docs/THREAT_MODEL.md) maps Sybil actors, evidence laundering, prompt injection, stale context, fake outcomes, revocation races and governance capture. The [adversarial review](docs/ADVERSARIAL_READINESS_REVIEW.md) records actual controls and remaining weaknesses. External public posts are visible before CI; automated screening is no substitute for prior disclosure judgment. [Staged research program](docs/RESEARCH_PROGRAM.md) separates offline comparison from any future voluntary runtime interoperability. Together with [SECURITY.md](SECURITY.md), these establish the public/private boundary.
 
 ## First falsifiable comparison
 

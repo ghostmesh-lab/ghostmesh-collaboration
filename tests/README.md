@@ -6,6 +6,10 @@ Run locally with Python 3.11 or newer and the JSON Schema validator:
 
     python3 -m pip install jsonschema==4.23.0
     python3 tools/validate_public_research.py
+    python3 -m unittest discover -s tests -p 'test_*.py'
+    python3 tools/evaluate_stale_truth.py
+
+The evaluator's output is a deterministic synthetic reference, not a claim of AI reasoning, measured truth, or independently witnessed real-world effects.
 
 The validator checks:
 - the machine-readable research record against the draft 2020-12 schema and date formats;

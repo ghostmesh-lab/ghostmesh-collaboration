@@ -52,6 +52,9 @@ def main():
     check(manifest["consequence_classes"] == ["C0", "C1"], "Scope widened")
     for path in manifest["links"].values():
         check((ROOT / path).is_file(), "Broken manifest link: " + path)
+    check((ROOT / manifest["reference_evaluator"]).is_file(), "Missing offline evaluator")
+    check(manifest["reference_evaluator_maturity"] == "DETERMINISTIC_SYNTHETIC_ONLY",
+          "Reference evaluator must not claim operational maturity")
 
     fixture = load("fixtures/v0.1/stale-truth.json")
     check(fixture["classification"] == "public-synthetic", "Non-synthetic fixture")

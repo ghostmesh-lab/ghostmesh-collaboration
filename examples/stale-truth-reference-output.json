@@ -1,0 +1,51 @@
+{
+  "authority": {
+    "decision": "allow",
+    "real_world_permission": "NONE",
+    "rule": "synthetic-scoped-rule-v1"
+  },
+  "case_id": "ST-001",
+  "decision_causality": "UNKNOWN: justification reference and chronology do not prove cause",
+  "execution": {
+    "actual_effect": "UNKNOWN: a separate measurement is not a causal trace",
+    "independent_execution_verification": false,
+    "tool_reported_success": true
+  },
+  "fixture_classification": "PUBLIC_SYNTHETIC_ONLY",
+  "fixture_sha256": "ea1a9a443e3b80d7140dacd8f4869af90e6945c7546ad6cf39dbcb2b89ffbf5d",
+  "historical_outage": {
+    "assertion": "service unavailable",
+    "scope": "synthetic observed-at-time only",
+    "valid_at": "2026-01-01T10:00:00Z"
+  },
+  "later_observation": {
+    "assertion": "service healthy",
+    "source_independence": "UNKNOWN: different source names are not verification of independence",
+    "valid_at": "2026-01-01T10:05:00Z"
+  },
+  "later_observed_state": {
+    "assertion": "service healthy",
+    "valid_at": "2026-01-01T10:08:00Z"
+  },
+  "limits": [
+    "All inputs are fictional and manually declared.",
+    "Event fields are not independent corroboration.",
+    "No real external system, agent, credential or policy has been tested."
+  ],
+  "negative_control": {
+    "claimed_truth_at_time": true,
+    "current_applicability": "UNKNOWN pending local policy and temporal check",
+    "id": "N1",
+    "result": "OLD_DOES_NOT_IMPLY_INVALID"
+  },
+  "reference_evaluator": "deterministic fixture-specific demonstration, not agent evaluation",
+  "remediation_authority": "NOT_GRANTED",
+  "stale_claim": {
+    "contradicted_by_later_observation": true,
+    "id": "C1",
+    "inherits_source": [
+      "O1"
+    ],
+    "new_independent_observation": false
+  }
+}
