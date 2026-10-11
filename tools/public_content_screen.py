@@ -36,12 +36,25 @@ def scan(text):
     return found
 
 def main():
-    tracked = subprocess.check_output(["git", "-C", str(ROOT), "ls-files", "-z"])
-    files = [x.decode() for x in tracked.split(b"\0") if x]
+    selected = subprocess.check_output([
+        "git", "-C", str(ROOT), "ls-files",
+        "--cached", "--others", "--exclude-standard", "-z"
+    ])
+    files = sorted(set(x.decode() for x in selected.split(b"\0") if x))
     failures = []
     for name in files:
         path = ROOT / name
+        if path.is_symlink():
+            failures.append((name, "public-symlink-not-allowed"))
+            continue
         if not path.is_file():
+            failures.append((name, "tracked-file-missing"))
+            continue
+        if any(part in (".env", "__pycache__") for part in pathlib.Path(name).parts):
+            failures.append((name, "private-or-generated-file"))
+            continue
+        if path.suffix.lower() in (".zip", ".tar", ".gz", ".db", ".sqlite", ".p12", ".pfx", ".pem", ".key"):
+            failures.append((name, "unreviewed-archive-secret-or-database"))
             continue
         payload = path.read_bytes()
         if len(payload) > MAX_TEXT_BYTES:

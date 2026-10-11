@@ -31,7 +31,14 @@
     "governance": "GOVERNANCE.md",
     "north_star": "docs/NORTH_STAR.md",
     "architecture": "architecture/GHOSTMESH_SYSTEM_MAP.md",
-    "maturity": "architecture/MATURITY_REGISTER.md"
+    "maturity": "architecture/MATURITY_REGISTER.md",
+    "technical_disclosure": "docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md",
+    "proof_release": "docs/PUBLIC_EVIDENCE_RELEASE_STANDARD.md",
+    "adversarial_review": "docs/ADVERSARIAL_READINESS_REVIEW.md",
+    "round_one": "experiments/ROUND_ONE_EXPERIMENT.md",
+    "collaborator_kickoff": "docs/COLLABORATOR_KICKOFF.md"
   },
-  "disclaimer": "A discoverable manifest is not authenticated agent enrollment, delegated authority, or a connected federation."
+  "disclaimer": "A discoverable manifest is not authenticated agent enrollment, delegated authority, or a connected federation.",
+  "reference_evaluator": "tools/evaluate_stale_truth.py",
+  "reference_evaluator_maturity": "DETERMINISTIC_SYNTHETIC_ONLY"
 }

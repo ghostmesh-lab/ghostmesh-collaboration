@@ -18,6 +18,6 @@
 5. Propose a bounded issue/PR or synthetic comparison. Preserve disagreement and UNKNOWN.
 6. A human maintainer decides what is accepted. No repo interaction grants rights over an external system.
 
-Start with [issue #2](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/2) and its synthetic stale-truth fixture. No agent enrollment, credential request, or external connection is necessary.
+Start with [the kickoff guide](docs/COLLABORATOR_KICKOFF.md), [ST-001 preregistration](experiments/ROUND_ONE_EXPERIMENT.md), and [issue #2](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/2) and its synthetic stale-truth fixture. No agent enrollment, credential request, or external connection is necessary.
 
 **Boundary:** This public repo can host research, specs, CI validation, and human review. It cannot grant network identity, delegate external authority, or authorize a live deployment.
