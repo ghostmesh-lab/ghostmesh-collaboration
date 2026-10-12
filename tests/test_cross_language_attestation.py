@@ -23,11 +23,12 @@ KEY_ID = "ephemeral-lab-key"
 ISSUER = "synthetic-lab-alpha"
 AUDIENCE = "synthetic-lab-beta"
 NOW = 1_000_000
-DRIVER = str(ROOT / "tests/attestation_node_driver.mjs")
+VERIFY_DRIVER = str(ROOT / "tests/attestation_node_verify_driver.mjs")
+ISSUE_DRIVER = str(ROOT / "tests/attestation_node_issue_driver.mjs")
 
 
-def run_node(request, *, success=True):
-    result = subprocess.run(["node", DRIVER], input=json.dumps(request),
+def run_node(request, *, success=True, driver=VERIFY_DRIVER):
+    result = subprocess.run(["node", driver], input=json.dumps(request),
                             text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                             timeout=12, check=False)
     if success and result.returncode != 0:
@@ -64,7 +65,7 @@ class CrossLanguageAttestation(unittest.TestCase):
         return base64.urlsafe_b64encode(raw).decode().rstrip("=")
 
     def node_verify(self, *, envelope_b64=None, trust=None, audience=AUDIENCE, now=NOW, success=True):
-        request = {"operation": "verify", "envelope_b64": envelope_b64 or self.issue_python(),
+        request = {"envelope_b64": envelope_b64 or self.issue_python(),
                    "trust": trust or self.record, "expected_audience": audience, "now": now}
         return run_node(request, success=success)
 
@@ -75,7 +76,7 @@ class CrossLanguageAttestation(unittest.TestCase):
         self.assertFalse(result["source_truth_verified"])
 
     def test_node_signed_python_verified(self):
-        case = run_node({"operation": "issue_ephemeral_test", "payload": self.payload})
+        case = run_node({"payload": self.payload}, driver=ISSUE_DRIVER)
         self.assertEqual(case["status"], "TEST_VECTOR_ONLY")
         raw = base64.urlsafe_b64decode(case["envelope_b64"] + "==")
         pkey = Ed25519PublicKey.from_public_bytes(bytes.fromhex(case["public_key_raw_hex"]))
