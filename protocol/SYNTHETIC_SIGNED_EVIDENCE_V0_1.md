@@ -65,6 +65,10 @@ python3 -m unittest tests/test_synthetic_attestation.py -v
 
 The tests generate fresh **ephemeral Ed25519 test keys in memory** and discard them. No sample signing private key is committed. Do not reuse any test trust anchor, source, or interface for production signatures.
 
+## Cross-language subset qualification
+
+A separate [Node.js verification implementation](../tools/verify_synthetic_attestation.mjs) and [cross-language qualification report](CROSS_LANGUAGE_SIGNED_EVIDENCE_V0_2.md) have been added. Both accept a bounded printable-ASCII/integer JSON subset with aligned encoding, not full RFC 8785/JCS. Trust-anchor acceptance remains caller supplied in synthetic tests; real identity and authorization remain out of scope.
+
 ## Explicit next gates
 
 A real multi-party profile needs an independently agreed encoding (RFC 8785/JCS or equivalent), test vectors, external trust-root binding, key custody and rotation, durable replay ledger, independent verification implementation, identity proof, scoped consent/law, and a separate owner-controlled approval path. Formal research release remains `CANDIDATE_NOT_RELEASED`.

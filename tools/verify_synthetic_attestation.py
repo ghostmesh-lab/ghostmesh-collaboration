@@ -66,16 +66,14 @@ def canonical_json(obj: Any) -> bytes:
             if not all(isinstance(k, str) for k in value):
                 raise AttestationRejected("non-string object key")
             for k, v in value.items():
-                try: k.encode("ascii")
-                except UnicodeEncodeError as exc:
-                    raise AttestationRejected("non-ascii JSON key") from exc
+                if not all(0x20 <= ord(ch) <= 0x7E for ch in k):
+                    raise AttestationRejected("non-printable ASCII JSON key")
                 check(v, depth + 1)
         elif isinstance(value, list):
             for entry in value: check(entry, depth + 1)
         elif isinstance(value, str):
-            try: value.encode("ascii")
-            except UnicodeEncodeError as exc:
-                raise AttestationRejected("non-ascii JSON string") from exc
+            if not all(0x20 <= ord(ch) <= 0x7E for ch in value):
+                raise AttestationRejected("non-printable ASCII JSON string")
         elif value is None or type(value) in (bool, int):
             if type(value) is int and abs(value) > 2**53 - 1:
                 raise AttestationRejected("oversize integer")

@@ -23,7 +23,11 @@ REQUIRED = (
     "tools/evaluate_stale_truth.py", "examples/stale-truth-reference-output.json",
     "docs/PUBLICATION_READINESS.md", "publication-readiness.json",
     "protocol/SYNTHETIC_SIGNED_EVIDENCE_V0_1.md",
-    "tools/verify_synthetic_attestation.py", "tests/test_synthetic_attestation.py",
+    "protocol/CROSS_LANGUAGE_SIGNED_EVIDENCE_V0_2.md",
+    "docs/TRUST_ROOT_LIFECYCLE.md",
+    "tools/verify_synthetic_attestation.py", "tools/verify_synthetic_attestation.mjs",
+    "tests/test_synthetic_attestation.py",
+    "tests/test_cross_language_attestation.py", "tests/test_node_attestation.mjs",
     "docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md", "docs/LICENSE_RATIFICATION_PROPOSAL.md",
     "docs/INDEPENDENT_REVIEW_CONTRACT.md",
     "bundles/st001/README.md", "bundles/st001/manifest.json", "tools/verify_bundle.py",
@@ -76,6 +80,8 @@ def check_readiness(package: dict) -> list[str]:
         errors.append("cannot declare release readiness without recording blockers")
     if gates.get("cryptographic_artifact_integrity") != "BOUNDED_HASH_MANIFEST_ONLY_UNSIGNED":
         errors.append("unsigned bundle cannot be promoted into signed external attestation")
+    if gates.get("cross_language_signature_interchange") != "TESTED_PRINTABLE_ASCII_SAFE_INTEGER_SYNTHETIC_ONLY":
+        errors.append("restricted cross-language verifier cannot be promoted into production trust")
     if package.get("agent_authority_granted") is not False:
         errors.append("release manifest may not grant agent authority")
     if package.get("live_federation") is not False:

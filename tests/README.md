@@ -16,6 +16,13 @@ The synthetic Ed25519 suite additionally requires `cryptography==46.0.5`, pinned
 
     python3 -m unittest tests/test_synthetic_attestation.py -v
 
+Cross-language tests use Node.js 22 and two distinct verifiers. Run locally:
+
+    python3 -m unittest tests/test_cross_language_attestation.py -v
+    node --test tests/test_node_attestation.mjs
+
+The cross-language fixture creates **in-memory ephemeral keys**, exchanges only public key material and signed synthetic assertions, and does not establish identity/authority. Python and Node use a bounded printable-ASCII/integer canonical JSON subset, **not** full RFC 8785.
+
 The validator checks:
 - the machine-readable research record against the draft 2020-12 schema and date formats;
 - explicit actor/sponsor identity uncertainty;

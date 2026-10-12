@@ -59,6 +59,12 @@ The [synthetic signed-evidence prototype](../protocol/SYNTHETIC_SIGNED_EVIDENCE_
 
 This implementation is a bounded cryptographic *research result*, not an interoperable standard, independent scientific replication or production signing service.
 
+## Cross-language qualification and trust-root boundaries
+
+A [separate Node.js verifier and Python↔Node cross-language tests](../protocol/CROSS_LANGUAGE_SIGNED_EVIDENCE_V0_2.md) establish interoperability for a **narrow ASCII/integer canonical JSON subset**, compatible with the specified subset of RFC 8785. They do not establish full JCS support, independent outside-team audit or any live signature authority.
+
+A [trust-root/key-lifecycle design](TRUST_ROOT_LIFECYCLE.md) describes adoption, rotation, revocation, key compromise and historically trustworthy verification. It is a proposal, not commissioned key infrastructure.
+
 ## What we should *not* sign
 
 - Every temporary reasoning trace, raw prompt, token, simulation step, or exploratory comment.

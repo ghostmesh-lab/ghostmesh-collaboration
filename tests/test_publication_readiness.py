@@ -32,6 +32,11 @@ class PublicationReadinessTests(unittest.TestCase):
         wrong["release_gates"]["cryptographic_artifact_integrity"] = "SIGNED_VERIFIED"
         self.assertTrue(gate.check_readiness(wrong))
 
+    def test_cross_language_qualification_cannot_claim_production(self):
+        wrong = copy.deepcopy(self.package)
+        wrong["release_gates"]["cross_language_signature_interchange"] = "PRODUCTION_TRUST_COMMISSIONED"
+        self.assertTrue(gate.check_readiness(wrong))
+
     def test_federation_grant_rejected(self):
         wrong = copy.deepcopy(self.package)
         wrong["live_federation"] = True

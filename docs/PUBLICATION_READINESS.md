@@ -33,6 +33,8 @@ For rights and governance decisions see [the exact licensing proposal](LICENSE_R
 
 The [synthetic signed-evidence prototype](../protocol/SYNTHETIC_SIGNED_EVIDENCE_V0_1.md) is an additional **test-only** result. The published ST-001 bundle remains an **unsigned** hash manifest, and no signing keys or production trust roots have been commissioned.
 
+The [Python↔Node synthetic signature interchange](../protocol/CROSS_LANGUAGE_SIGNED_EVIDENCE_V0_2.md) qualifies a narrow profile. Trust-root adoption, rotation, revocation and crash-safe replay protection remain **unimplemented** and are described in the [proposal](TRUST_ROOT_LIFECYCLE.md). No independent external lab has ratified it.
+
 ## Integrity model for future release packages
 
 A qualifying release should freeze source revision, fixture hash, evaluator identity/version, negative-control cases, independent reviewer, what it proves, what it cannot establish, and how later corrections are recorded. When a claim depends on privately owned systems, disclose a distinct independently reviewed sanitized artifact; never publish raw production receipts, source paths, credentials or private messages here.
