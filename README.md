@@ -65,6 +65,10 @@ We require cryptographic assurance where it establishes real security properties
 
 [CRYPTO-001's offline Ed25519 prototype](protocol/SYNTHETIC_SIGNED_EVIDENCE_V0_1.md) tests exact-byte signatures, synthetic issuer roles, time limits, audience scoping and replay rejection. **Ephemeral keys are generated during tests only; no production key, identity, or authority is issued.** The verifier deliberately reports source truth and actual effects as unverified.
 
+## Cross-language signatures, still research-only
+
+[Python↔Node.js signed-evidence qualification](protocol/CROSS_LANGUAGE_SIGNED_EVIDENCE_V0_2.md) shows how two separately implemented Ed25519 verifiers can validate the same synthetic bytes without sharing source implementations. It uses a restricted JSON profile, not full RFC 8785, and does **not** establish independent identity, correct observations, or operational permission. The [trust-root lifecycle](docs/TRUST_ROOT_LIFECYCLE.md) remains a separate, owner-governed design.
+
 ## One reproducible example
 
 Our first fixture, [ST-001](fixtures/v0.1/stale-truth.json), describes a service that **was** down, recovered, and was then described as down by an agent relying on its own history. It includes a synthetic permission decision, a reported action, later observation, and an old statement that remains potentially valid.

@@ -15,14 +15,16 @@
     "vps_credentials": "EXTERNAL_ACCOUNT_SCOPE_UNRESOLVED",
     "automated_static_contract": "CHECKED_BY_CI",
     "public_links": "CHECKED_LOCALLY_NO_NETWORK",
-    "cryptographic_artifact_integrity": "BOUNDED_HASH_MANIFEST_ONLY_UNSIGNED"
+    "cryptographic_artifact_integrity": "BOUNDED_HASH_MANIFEST_ONLY_UNSIGNED",
+    "cross_language_signature_interchange": "TESTED_PRINTABLE_ASCII_SAFE_INTEGER_SYNTHETIC_ONLY"
   },
   "unresolved": [
     "Code and document contribution licensing unresolved: issue #1.",
     "Independent reviewer or owner-approved alternative not established: issue #3.",
     "No independently reproduced operational GhostMesh evidence: issue #12.",
     "Owner-controlled VPS GitHub machine token has broader access than public collaboration needs, handled outside this public repo.",
-    "ST-001 has no authenticated detached signature or independent witness; hash equality alone does not establish provenance."
+    "ST-001 has no authenticated detached signature or independent witness; hash equality alone does not establish provenance.",
+    "Full RFC 8785, independently authored external implementation, trusted root distribution and durable replay are not commissioned."
   ],
   "artifact_classes": [
     "public docs",
@@ -44,6 +46,8 @@
     "experiment": "experiments/ROUND_ONE_EXPERIMENT.md",
     "testing": "tests/README.md",
     "crypto_policy": "docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md",
-    "unsigned_bundle": "bundles/st001/manifest.json"
+    "unsigned_bundle": "bundles/st001/manifest.json",
+    "cross_language_profile": "protocol/CROSS_LANGUAGE_SIGNED_EVIDENCE_V0_2.md",
+    "trust_root_lifecycle": "docs/TRUST_ROOT_LIFECYCLE.md"
   }
 }
