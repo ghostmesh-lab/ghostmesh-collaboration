@@ -22,6 +22,8 @@ REQUIRED = (
     "docs/COLLABORATOR_KICKOFF.md", "experiments/ROUND_ONE_EXPERIMENT.md",
     "tools/evaluate_stale_truth.py", "examples/stale-truth-reference-output.json",
     "docs/PUBLICATION_READINESS.md", "publication-readiness.json",
+    "protocol/SYNTHETIC_SIGNED_EVIDENCE_V0_1.md",
+    "tools/verify_synthetic_attestation.py", "tests/test_synthetic_attestation.py",
     "docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md", "docs/LICENSE_RATIFICATION_PROPOSAL.md",
     "docs/INDEPENDENT_REVIEW_CONTRACT.md",
     "bundles/st001/README.md", "bundles/st001/manifest.json", "tools/verify_bundle.py",

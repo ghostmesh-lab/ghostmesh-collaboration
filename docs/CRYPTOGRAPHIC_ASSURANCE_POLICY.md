@@ -1,6 +1,6 @@
 # Cryptographic assurance: protect consequential trust boundaries
 
-**Status: proposed technical policy for GhostMesh Lab's public research exchange.** This repository does not issue real credentials or operate production trust services. Its offline checks are independently reviewable but are **not** digital signatures, attestations, or proof of real-world truth.
+**Status: proposed technical policy for GhostMesh Lab's public research exchange.** This repository does not issue real credentials or operate production trust services. It includes an offline **synthetic Ed25519 signature verifier tested with ephemeral keys**; those test signatures do not establish real identities, delegated authority, or truth.
 
 ## Design principle
 
@@ -52,6 +52,12 @@ A signed history with an unknown number of unwitnessed events is not complete hi
 The offline ST-001 package contains a manifest with SHA-256 digests. The verifier checks file bytes, size, path integrity, roles, and absence of unauthorized extra entries. It explicitly returns an **unsigned hash-manifest validation**, not verified authorship. Its provenance can be strengthened later through independently trusted signed Git history and any separately approved signed release attestation.
 
 The manifest is a **claim**, not an authority grant. A malicious actor who replaces both the manifest and its files can produce internally consistent hashes. A relying party therefore needs an authentic expected manifest root or signed release reference obtained through an independently trusted channel. There is no such external trust root certified here.
+
+## Synthetic signature qualification v0.1
+
+The [synthetic signed-evidence prototype](../protocol/SYNTHETIC_SIGNED_EVIDENCE_V0_1.md) verifies Ed25519 over a **narrow ASCII-only canonical JSON subset**, not full RFC 8785. The test harness supplies an in-memory trust map and generates disposable private keys at runtime. It rejects tampering, wrong trust roots, revoked keys, event-type/role substitution, bad expiry, audience changes and replay attempts. It deliberately returns **no live authority**, **no independent truth verification**, and **UNKNOWN** for real effects.
+
+This implementation is a bounded cryptographic *research result*, not an interoperable standard, independent scientific replication or production signing service.
 
 ## What we should *not* sign
 
