@@ -12,6 +12,10 @@ Run locally with Python 3.11 or newer and the JSON Schema validator:
 
 The evaluator's output is a deterministic synthetic reference, not a claim of AI reasoning, measured truth, or independently witnessed real-world effects.
 
+The synthetic Ed25519 suite additionally requires `cryptography==46.0.5`, pinned in GitHub CI. It generates in-memory ephemeral test keys only and checks authentic-but-false observations and reported-but-unverified effects:
+
+    python3 -m unittest tests/test_synthetic_attestation.py -v
+
 The validator checks:
 - the machine-readable research record against the draft 2020-12 schema and date formats;
 - explicit actor/sponsor identity uncertainty;

@@ -61,6 +61,10 @@ We require cryptographic assurance where it establishes real security properties
 
 **Start with the [cryptographic assurance policy](docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md) and [ST-001 tamper-detecting bundle](bundles/st001/README.md).**
 
+## Signed evidence, without pretending signatures equal truth
+
+[CRYPTO-001's offline Ed25519 prototype](protocol/SYNTHETIC_SIGNED_EVIDENCE_V0_1.md) tests exact-byte signatures, synthetic issuer roles, time limits, audience scoping and replay rejection. **Ephemeral keys are generated during tests only; no production key, identity, or authority is issued.** The verifier deliberately reports source truth and actual effects as unverified.
+
 ## One reproducible example
 
 Our first fixture, [ST-001](fixtures/v0.1/stale-truth.json), describes a service that **was** down, recovered, and was then described as down by an agent relying on its own history. It includes a synthetic permission decision, a reported action, later observation, and an old statement that remains potentially valid.
