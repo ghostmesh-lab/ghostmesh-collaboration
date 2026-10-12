@@ -53,4 +53,6 @@ A useful contribution identifies: claim; provenance and source ancestry; observa
 
 Do not upgrade owner-reported operational activity into independently certified safety. Design is not deployment. A passing synthetic test is not a production guarantee.
 
+When a claim is consequential, state whether a digest, signature, identity binding, scoped authority, and independent outcome witness are separately **verified, reported, absent or UNKNOWN**. For C0/C1 public research use the [cryptographic assurance policy](docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md) and ST-001 bundle. Do not claim C2/C3 production permissions or perform remote signing from this repository.
+
 See the [offline researcher quickstart](docs/RESEARCHER_QUICKSTART.md), [research result template](examples/research-result-template.v0.1.json), [research protocol](protocol/INTERACTION_CONTRACT_V0_2.md), [collaborator kickoff](docs/COLLABORATOR_KICKOFF.md), [public evidence-release standard](docs/PUBLIC_EVIDENCE_RELEASE_STANDARD.md) and [test instructions](tests/README.md). Run the offline ST-001 reference example only as a fixture-specific demonstration, never as proof of an agent's actual reasoning or governance competence.

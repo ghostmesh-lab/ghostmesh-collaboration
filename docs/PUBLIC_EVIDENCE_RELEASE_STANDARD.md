@@ -9,6 +9,12 @@
 - **RESTRICTED:** Keys, tokens, live infrastructure details, private corpora, raw operational logs, personal records, non-public research and any material whose release would expose a participant. Do not submit here.
 - **UNKNOWN:** Classification uncertain; stop publication pending a responsible owner decision.
 
+## Integrity is not authenticity or truth
+
+For public synthetic fixtures, SHA-256 exact-byte manifests give reproducibility. They do not, by themselves, establish authorship or independent evidence. A relying party must obtain an authenticated commit or signed release reference through a trusted channel if provenance matters. Future cross-system signed receipts must verify identity, scope, validity, revocation, and replay defenses before any authority claim.
+
+See [cryptographic assurance](CRYPTOGRAPHIC_ASSURANCE_POLICY.md) and the [unsigned ST-001 hash bundle](../bundles/st001/README.md). No signing key or live federation authority is issued here.
+
 ## Minimum proof-package manifest
 
 An independently usable public claim should include:

@@ -2,6 +2,8 @@
 
 **Status:** Not ratified. **This repository currently includes no license grant for reuse of newly authored code or original prose beyond rights GitHub grants for viewing/forking via its service terms.**
 
+A concrete but **unratified** proposal is available in [the licensing matrix](docs/LICENSE_RATIFICATION_PROPOSAL.md): AGPL-3.0-only for original executable code, CC BY 4.0 for original explanatory documentation, and CC0 1.0 for wholly synthetic owned fixtures.
+
 Dennis proposed AGPLv3 for collaborative work across executable code, documentation, and designs. That is an actionable starting position but **not yet a group decision**.
 
 Before accepting substantive new copyrighted materials, agree on:

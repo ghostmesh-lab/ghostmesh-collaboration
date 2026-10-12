@@ -14,13 +14,15 @@
     "independent_external_reproduction": "NOT_PERFORMED",
     "vps_credentials": "EXTERNAL_ACCOUNT_SCOPE_UNRESOLVED",
     "automated_static_contract": "CHECKED_BY_CI",
-    "public_links": "CHECKED_LOCALLY_NO_NETWORK"
+    "public_links": "CHECKED_LOCALLY_NO_NETWORK",
+    "cryptographic_artifact_integrity": "BOUNDED_HASH_MANIFEST_ONLY_UNSIGNED"
   },
   "unresolved": [
     "Code and document contribution licensing unresolved: issue #1.",
     "Independent reviewer or owner-approved alternative not established: issue #3.",
     "No independently reproduced operational GhostMesh evidence: issue #12.",
-    "Owner-controlled VPS GitHub machine token has broader access than public collaboration needs, handled outside this public repo."
+    "Owner-controlled VPS GitHub machine token has broader access than public collaboration needs, handled outside this public repo.",
+    "ST-001 has no authenticated detached signature or independent witness; hash equality alone does not establish provenance."
   ],
   "artifact_classes": [
     "public docs",
@@ -40,6 +42,8 @@
     "security": "SECURITY.md",
     "release_policy": "docs/PUBLICATION_READINESS.md",
     "experiment": "experiments/ROUND_ONE_EXPERIMENT.md",
-    "testing": "tests/README.md"
+    "testing": "tests/README.md",
+    "crypto_policy": "docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md",
+    "unsigned_bundle": "bundles/st001/manifest.json"
   }
 }

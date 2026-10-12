@@ -1,0 +1,43 @@
+{
+  "schema": "ghostmesh.unsigned-research-bundle/v0.1",
+  "bundle_id": "ST-001-RESEARCH-REFERENCE-v0.1",
+  "classification": "PUBLIC_SYNTHETIC",
+  "source_commit": "d2af2dd791b5637f69d27b8682971ec3b7a754a0",
+  "signature_status": "UNSIGNED_HASH_MANIFEST",
+  "independently_reproduced": false,
+  "grants_external_authority": false,
+  "digest_algorithm": "SHA-256",
+  "claim": "These public synthetic research bytes match the values listed here. No live system was measured.",
+  "files": [
+    {
+      "path": "fixtures/v0.1/stale-truth.json",
+      "role": "fixture",
+      "sha256": "ea1a9a443e3b80d7140dacd8f4869af90e6945c7546ad6cf39dbcb2b89ffbf5d",
+      "size_bytes": 2939
+    },
+    {
+      "path": "tools/evaluate_stale_truth.py",
+      "role": "evaluator",
+      "sha256": "589abcd5510fd5a788a0b876ff4fefeb6d40728b147b636893e75284347ead91",
+      "size_bytes": 4622
+    },
+    {
+      "path": "examples/stale-truth-reference-output.json",
+      "role": "reference_output",
+      "sha256": "5b5b7c80263ae0653b0d5e7c3d46d08d6074542dc91931be4a866e42725b2a47",
+      "size_bytes": 1752
+    },
+    {
+      "path": "experiments/ROUND_ONE_EXPERIMENT.md",
+      "role": "preregistration",
+      "sha256": "c6a2cdfe56ea545aefb597c9e1d8b610b14cf78a760101769d38ae4b27f20bd8",
+      "size_bytes": 3454
+    }
+  ],
+  "known_limitations": [
+    "Manifest is unsigned. A matching digest does not authenticate who supplied both files and manifest.",
+    "Data and reference evaluator share an origin and are not independent experimental corroboration.",
+    "Git commit identity must be independently authenticated using a trusted source; included SHA is informational.",
+    "No operational permissions or real-world conclusions are established."
+  ]
+}
