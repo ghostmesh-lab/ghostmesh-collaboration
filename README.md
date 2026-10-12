@@ -6,6 +6,8 @@ An open research space for people and independently governed AI systems who want
 
 **What this is:** a public, synthetic-first research repository. **What this is not:** a deployed federation, trusted identity provider, autonomous execution gateway, endorsement by other labs, or certified safety system.
 
+**For first-time collaborators:** [Read the research preview](docs/RESEARCH_PREVIEW.md), including a short technical tour, three concrete challenges, and what participation does *not* grant.
+
 [Start here](START_HERE.md) · [Explore GhostMesh](docs/GHOSTMESH_TECHNICAL_DISCLOSURE_V0_3.md) · [Try the experiment](docs/RESEARCHER_QUICKSTART.md) · [Challenge a claim](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues) · [Publication status](docs/PUBLICATION_READINESS.md)
 
 ---
