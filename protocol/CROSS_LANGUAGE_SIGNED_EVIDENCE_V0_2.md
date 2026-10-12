@@ -8,6 +8,8 @@ Two different implementations, **Python using `cryptography`** and **Node.js usi
 
 The Node verifier supplies its own structure checks, canonical serialization, trust role checks and Ed25519 verification. Python tests generate fresh ephemeral keys in memory, pass public keys only across the process boundary and assert the Node result. Node also generates an ephemeral private key in memory and emits only a signed sample and test public key for Python verification.
 
+**Test-driver isolation:** The Node verification and ephemeral-signing drivers are separate, fixed-purpose scripts. No caller-selected `operation` controls which one runs, and the verifier driver contains no signing or private-key generation path. Trust material passed to the verification driver is **test input only**: it is not independent trust-root adoption, and this CLI is not an operational authentication service.
+
 ## Canonicalization and interoperability scope
 
 The signed payload is the v0.1 [synthetic signed-evidence schema](SYNTHETIC_SIGNED_EVIDENCE_V0_1.md), with all its field restrictions. Canonicalization uses the following **JCS-compatible subset**:
