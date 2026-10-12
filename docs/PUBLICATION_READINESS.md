@@ -14,6 +14,12 @@ For cryptographic integrity, see [cryptographic assurance](CRYPTOGRAPHIC_ASSURAN
 
 For rights and governance decisions see [the exact licensing proposal](LICENSE_RATIFICATION_PROPOSAL.md) and [human reviewer contract](INDEPENDENT_REVIEW_CONTRACT.md). Their presence does **not** ratify licenses or appoint reviewers.
 
+## Preview participation versus formal release
+
+A **read-only research preview** may be shared with others now, with accurate maturity and licensing caveats. This is not a GitHub Release, independent scientific certification, or permission to merge substantial outside work. A broader public launch announcement should be owner-reviewed and should not invite copyright-bearing contributions until exact outbound/inbound license terms are accepted.
+
+An October 11 owner-led security/disclosure sweep checked reachable public Git and PR-head history, accessible Issues and PR comments, current access settings, and external research links. No named credential/private-path-pattern matches or broken externally linked research pages were found in that bounded sweep; see the dated [organization boundary readback](ORGANIZATION_SECURITY_BOUNDARY.md). A heuristic scan and HTTP availability check do not prove source truth, rights clearance, absence of novel leaks, or independent security certification. The broad machine-token and independent-review gaps remain open.
+
 ## Release checklist
 
 | Gate | Present state | What changes it |

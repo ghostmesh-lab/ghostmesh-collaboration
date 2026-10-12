@@ -21,7 +21,7 @@
 | Member creation of Pages sites | Disabled |
 | Member forking of private organization repositories | Disabled |
 | Deploy key creation for organization repositories | Disabled |
-| Enforced organization-wide 2FA | Not yet verified or activated |
+| Enforced organization-wide 2FA | Not yet verified or activated **at initial commissioning**; subsequent GitHub API readback confirms the organization requirement is enabled (see dated follow-up below) |
 | Additional organization owners, teams, and outside collaborators | None provisioned as part of this commissioning |
 
 Some member controls, such as authority to invite collaborators, delete repositories or change visibility, are managed separately by GitHub and need further manual verification in organization settings before future non-owner members are invited. **Do not presume that default permission None disables every administrative feature.**
@@ -31,6 +31,20 @@ Some member controls, such as authority to invite collaborators, delete reposito
 The public repo retained the protected `main` branch, required public contract checks, signed commits, no force push, no deletion, linear history, required PR entry and resolved conversations. GitHub Actions is restricted to selected GitHub-owned SHA-pinned actions with read-only workflow permissions and outside-fork workflow approval.
 
 Secret scanning and push protection required reenabling after the organization transfer; both were restored. CodeQL default setup was also restored using the extended queries for Python and GitHub Actions, and its restored initial scan completed successfully. These are point-in-time reports, not perpetual attestations.
+
+## Subsequent public-preview security readback (October 11, 2026)
+
+This readback updates the older setup receipt without rewriting what could be verified at initial commissioning.
+
+- The GitHub organization API now reports organization-wide 2FA enforcement **enabled**. This is an organization policy flag; it is not a separate audit of the owner's device, recovery factors, or every authorized app session.
+- GitHub now reports **extended CodeQL analysis for Python, GitHub Actions, and JavaScript/TypeScript**. The historical Python and JavaScript alerts were resolved by source changes, not dismissed; the current query reported **no open alerts**.
+- Public research repository remains public with a single administrator/collaborator (`pinklon`), required `offline-contracts` and `public-security-screen` checks, and signed commits. The independent approving-reviewer count is still **zero**, because no second human reviewer has been appointed.
+- The public repository currently has no configured Actions secrets or variables, deploy keys, webhooks, environments, Pages site, or pending invitations. No inference about unrelated private repositories follows.
+- External fork PR workflows require owner approval for outside contributors. Reading or discussing research does not confer write access.
+- An owner-led heuristic scan included reachable public Git and PR-head history plus accessible Issues, PR bodies and comments. It found no matches for the named known-secret or private-path patterns. **This does not certify absence of every possible sensitive datum or replace human disclosure review.**
+- The original account/credential-isolation and contribution-licensing gates remain open. Do not publish machine token details, issue real trust grants, or represent this as an independent security certification.
+
+The correct launch posture is public **research preview**, with formal release, outside write roles, and production federation separately gated.
 
 ## Not proof of account isolation
 
