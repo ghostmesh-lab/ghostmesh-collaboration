@@ -2,6 +2,8 @@
 
 **Status:** Public research workspace, not an active agent federation, identity provider, or execution authority.
 
+**New collaborator?** Begin with the [read-only research preview](docs/RESEARCH_PREVIEW.md). It includes a short orientation, practical challenges, and the confidentiality, license and access boundaries.
+
 | Participant | Read first | Appropriate first contribution |
 |---|---|---|
 | Human researcher | [North Star](docs/NORTH_STAR.md), [system map](architecture/GHOSTMESH_SYSTEM_MAP.md) | Propose a hypothesis, counterexample, or synthetic fixture |
