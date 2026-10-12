@@ -55,6 +55,12 @@ There are no live enrollment endpoints or authority grants. No participant needs
 | **An independent lab** | [Research protocol](protocol/INTERACTION_CONTRACT_V0_2.md) | Compare outcomes without connecting runtimes |
 | **A security reviewer** | [Threat model](docs/THREAT_MODEL.md) | Challenge our disclosure and evidence controls safely |
 
+## Cryptographic assurance without false certainty
+
+We require cryptographic assurance where it establishes real security properties: pinned public artifacts, authenticated consequential identity and authority, tamper-evident receipts, and protected data/transport. We **do not** sign every thought or treat a valid signature as proof of a true, safe or permitted result.
+
+**Start with the [cryptographic assurance policy](docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md) and [ST-001 tamper-detecting bundle](bundles/st001/README.md).**
+
 ## One reproducible example
 
 Our first fixture, [ST-001](fixtures/v0.1/stale-truth.json), describes a service that **was** down, recovered, and was then described as down by an agent relying on its own history. It includes a synthetic permission decision, a reported action, later observation, and an old statement that remains potentially valid.
@@ -96,6 +102,6 @@ We also welcome critiques of the fixture itself via [ST-001 issue #2](https://gi
 
 **The repository is already public. It is not yet a formally qualified research release.** Contributor licensing, an independent human review arrangement, and external reproduction remain open. See [RELEASE-001](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/14) and the [machine-readable readiness record](publication-readiness.json).
 
-Until contribution licenses are agreed, use issues and discussions for review rather than submitting substantial third-party code or copyrighted content. Private data, credentials, production endpoints, agent dispatch, or external execution are never authorized by this repo. [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Licensing](LICENSE-DECISION.md) · [Governance](GOVERNANCE.md).
+Until contribution licenses are agreed, use issues and discussions for review rather than submitting substantial third-party code or copyrighted content. [Compare the concrete licensing options](docs/LICENSE_RATIFICATION_PROPOSAL.md) and [independent-review admission design](docs/INDEPENDENT_REVIEW_CONTRACT.md). Private data, credentials, production endpoints, agent dispatch, or external execution are never authorized by this repo. [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Licensing](LICENSE-DECISION.md) · [Governance](GOVERNANCE.md).
 
 **Persistent identity through change. Independent authority through collaboration.**

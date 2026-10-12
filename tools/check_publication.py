@@ -22,6 +22,9 @@ REQUIRED = (
     "docs/COLLABORATOR_KICKOFF.md", "experiments/ROUND_ONE_EXPERIMENT.md",
     "tools/evaluate_stale_truth.py", "examples/stale-truth-reference-output.json",
     "docs/PUBLICATION_READINESS.md", "publication-readiness.json",
+    "docs/CRYPTOGRAPHIC_ASSURANCE_POLICY.md", "docs/LICENSE_RATIFICATION_PROPOSAL.md",
+    "docs/INDEPENDENT_REVIEW_CONTRACT.md",
+    "bundles/st001/README.md", "bundles/st001/manifest.json", "tools/verify_bundle.py",
     "docs/ARCHITECTURE_AT_A_GLANCE.md", "docs/RESEARCHER_QUICKSTART.md",
     "examples/README.md", "schemas/research-result.v0.1.schema.json",
     "examples/research-result-template.v0.1.json",
@@ -69,6 +72,8 @@ def check_readiness(package: dict) -> list[str]:
             errors.append("missing explicit release gate: " + name)
     if not package.get("unresolved"):
         errors.append("cannot declare release readiness without recording blockers")
+    if gates.get("cryptographic_artifact_integrity") != "BOUNDED_HASH_MANIFEST_ONLY_UNSIGNED":
+        errors.append("unsigned bundle cannot be promoted into signed external attestation")
     if package.get("agent_authority_granted") is not False:
         errors.append("release manifest may not grant agent authority")
     if package.get("live_federation") is not False:

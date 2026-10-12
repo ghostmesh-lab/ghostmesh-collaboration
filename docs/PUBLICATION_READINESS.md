@@ -10,6 +10,10 @@
 - Privacy policy, threat model, provenance limitations, and public issue/discussion process.
 - Exact repo-commit citation plus public methods for a reader to reproduce the synthetic result.
 
+For cryptographic integrity, see [cryptographic assurance](CRYPTOGRAPHIC_ASSURANCE_POLICY.md) and [the ST-001 unsigned hash bundle](../bundles/st001/README.md). These establish internal byte consistency without supplying an independently trusted signature.
+
+For rights and governance decisions see [the exact licensing proposal](LICENSE_RATIFICATION_PROPOSAL.md) and [human reviewer contract](INDEPENDENT_REVIEW_CONTRACT.md). Their presence does **not** ratify licenses or appoint reviewers.
+
 ## Release checklist
 
 | Gate | Present state | What changes it |
@@ -18,6 +22,7 @@
 | Offline tests and protected-branch CI | Configured | Green checks for exact proposed revision |
 | Public link integrity | Automated local check | Broken paths fixed, external targets separately reviewed |
 | Secret scanning, push protection, CodeQL | Enabled at last live review | Must refresh API status when releasing |
+| ST-001 artifact hashes | **BOUNDED VERIFIED, UNSIGNED** | [Recompute public SHA-256 values](../bundles/st001/README.md); do not claim origin authenticity or independent evidence |
 | License for code/docs/fixtures | **OPEN** | Record owner decision in [issue #1](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/1), check inbound rights and commit applicable licenses |
 | Independent reviewer | **NOT CONFIGURED** | Explicitly appoint appropriately limited reviewer or adopt owner-ratified equivalent, then enforce it |
 | Independently reproduced real operational evidence | **NOT DONE** | Release only a sanitized, scoped, separately verified package via [issue #12](https://github.com/ghostmesh-lab/ghostmesh-collaboration/issues/12) |

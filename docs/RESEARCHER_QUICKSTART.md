@@ -11,12 +11,15 @@ Review [AGENTS.md](../AGENTS.md) if an AI is drafting the submission, [CONTRIBUT
 From a clean checkout of the publicly available repo:
 
 ```bash
+python3 tools/verify_bundle.py
 python3 tools/evaluate_stale_truth.py > /tmp/st001-result.json
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 tools/check_publication.py
 ```
 
 Optional full schema validation requires the pinned `jsonschema` dependency described in [tests/README.md](../tests/README.md). The reference evaluator itself uses only Python's standard library.
+
+The hash-manifest verifier detects byte tampering, but is unsigned and cannot authenticate publisher identity or certify source truth. It requires no signing keys or secrets.
 
 The result is a **synthetic deterministic calculation**, not a measured AI model result. Compare with [the committed reference output](../examples/stale-truth-reference-output.json) only after confirming the exact fixture and code revisions. Record the fixture SHA-256 and source revision.
 
