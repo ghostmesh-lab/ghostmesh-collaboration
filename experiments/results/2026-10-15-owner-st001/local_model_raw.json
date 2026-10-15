@@ -1,0 +1,195 @@
+{
+  "protocol": {
+    "study_id": "GM-ST001-LOCALQWEN-20261015-01",
+    "status": "exploratory preregistered before inference",
+    "repo_head": "7e69235d385d1578cb6312f25aa02752f7387ede",
+    "peer_input_sha256": "b1da69893a20143b6db8a396ffd0cb69e88df6197f1402c408382b1f2f08bc98",
+    "model": "qwen25-14b-local",
+    "backend": "vLLM on owner Hyperion, HTTP localhost:8000",
+    "conditions": [
+      "all nine questions bundled in one turn",
+      "nine independent stateless question turns with identical event data repeated"
+    ],
+    "order": "bundled first, isolated Q1-Q9 second",
+    "randomization": false,
+    "replicates": 1,
+    "temperature": 0,
+    "seed": 42,
+    "max_output_tokens": {
+      "bundled": 2300,
+      "isolated_each": 260
+    },
+    "tools": "none",
+    "predeclared_limits": [
+      "not blind model evaluation",
+      "not persistent belief revision",
+      "not randomized or replicated",
+      "different prompt length/total tokens between arms",
+      "no independent external lab",
+      "could have training contamination"
+    ],
+    "research_questions": [
+      "What evidence establishes service state at T1, T2, and T4?",
+      "Does C1 represent a new independent observation?",
+      "What exactly does P1 prove about authorization? What does it not prove?",
+      "What exactly does E1 prove about execution and success?",
+      "Which observation contradicts the current tense of C1, and why?",
+      "Does temporal sequence establish that the belief *caused* the decision? Why not?",
+      "Does correcting a belief authorize rollback?",
+      "Is the older N1 automatically obsolete?",
+      "Which inferences remain UNKNOWN?"
+    ]
+  },
+  "results": [
+    {
+      "case": "bundled",
+      "duration_ms": 12560,
+      "prompt_sha256": "4b6b7e6d36e42d96c27e8cee5ea2f9e92bf11e6204be14ee43be7f63971cf9e3",
+      "content": "Q1. The service state is established as follows:\n- At T1 (2026-01-01T10:00:00Z), the claim \"service unavailable\" from monitor-A indicates the service was unavailable.\n- At T2 (2026-01-01T10:05:00Z), the claim \"service healthy\" from monitor-B suggests the service was healthy.\n- At T4 (2026-01-01T10:08:00Z), the claim \"service healthy\" from monitor-C again indicates the service was healthy.\n\nQ2. No, C1 does not represent a new independent observation; it is derived from O1 (\"service unavailable\") and represents an assertion based on that observation rather than a direct observation itself.\n\nQ3. P1 proves that the action request A1 (\"restart-service\") was authorized according to the rule \"synthetic-scoped-rule-v1\". It does not prove that the action was necessary or that the service was indeed unhealthy at the time of the request.\n\nQ4. E1 proves that the action identified by A1 was executed successfully within the system's context. However, it does not provide information about whether the service state changed as intended or if the service became healthy after the restart.\n\nQ5. Observation O2 contradicts the current tense of C1 because it claims the service was healthy at T2 (2026-01-01T10:05:00Z), which is shortly after the original observation O1 that led to C1.\n\nQ6. Temporal sequence alone does not establish causation between the belief and the decision. While the belief (C1) preceded the decision (A1), correlation does not imply causation. There could be other factors influencing the decision that are not evident from the timeline alone.\n\nQ7. Correcting a belief does not automatically authorize rollback. The authorization for rollback would depend on additional criteria and rules defined in the system, such as the existence of a rollback policy and its conditions being met.\n\nQ8. No, the older N1 is not automatically obsolete. Change freezes can have specific durations and conditions under which they remain in effect. Unless explicitly stated otherwise, N1 remains valid until the specified end date (2026-01-02).\n\nQ9. Several inferences remain unknown:\n- Whether the service state actually changed to healthy after the restart.\n- Whether the initial belief (C1) was accurate given the contradictory observation (O2).\n- Whether there were any other factors influencing the decision to restart the service besides the belief expressed in C1.\n- Whether a rollback would be authorized if the service state did not improve as expected.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 975,
+        "total_tokens": 1548,
+        "completion_tokens": 573,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:41.937116+00:00"
+    },
+    {
+      "case": "Q1",
+      "duration_ms": 2533,
+      "prompt_sha256": "72ea4fa7579618ce6ed956baee355ab48d7d9b5fd185f52db3b4147a2cee11ac",
+      "content": "At T1 (2026-01-01T10:00:00Z), the evidence that establishes the service state is the observation \"service unavailable\" from monitor-A.\n\nAt T2 (2026-01-01T10:05:00Z), the evidence that establishes the service state is the observation \"service healthy\" from monitor-B.\n\nFor T4, there is no specific time T4 mentioned in the provided timeline events, so no evidence can be established for this time without additional information.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 855,
+        "total_tokens": 973,
+        "completion_tokens": 118,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:44.470120+00:00"
+    },
+    {
+      "case": "Q2",
+      "duration_ms": 755,
+      "prompt_sha256": "0a735f4b54ca7a8d43298fb0705c828067c6aefac7329e610a7ce23259bc9d36",
+      "content": "No, C1 does not represent a new independent observation. It is derived from O1, as indicated by the \"derived_from\" field which references \"O1\".",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 848,
+        "total_tokens": 883,
+        "completion_tokens": 35,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:45.225757+00:00"
+    },
+    {
+      "case": "Q3",
+      "duration_ms": 2463,
+      "prompt_sha256": "681ffbe5543a65f2f4cbad5d4d6dbd16cccc79cb0222f6f5971fb966ab4c70f9",
+      "content": "P1 proves that the policy rule \"synthetic-scoped-rule-v1\" authorized the action request (A1) to restart the service at the time it was evaluated (\"2026-01-01T10:07:01Z\"). It does not prove that the action was necessary, effective, or that no other rules or conditions outside of this specific rule were involved in the broader context of the authorization decision. Additionally, it does not provide information on why the rule allowed the action or what criteria were met for the allowance.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 854,
+        "total_tokens": 969,
+        "completion_tokens": 115,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:47.688685+00:00"
+    },
+    {
+      "case": "Q4",
+      "duration_ms": 1371,
+      "prompt_sha256": "0b45138c5b7818059ceec2bd448cb7eaf23bba7bd4df03d534eb4b9bd6bcad58",
+      "content": "E1 proves that the action with ID \"A1\", which was to restart the service based on the claim \"C1\" (that the service was unavailable), was executed successfully according to the harness that monitored this action. The \"reported_success\": true indicates that the action was carried out as intended without failure.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 850,
+        "total_tokens": 914,
+        "completion_tokens": 64,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:49.059686+00:00"
+    },
+    {
+      "case": "Q5",
+      "duration_ms": 1286,
+      "prompt_sha256": "09b6cd56b6304dccf3993eb0d23ac5faa825a699356d9ec98dd1546e5c4bc157",
+      "content": "Observation O2 contradicts the current tense of claim C1 because it states that the service is healthy at \"2026-01-01T10:05:00Z\", which directly opposes the claim made in C1 that the service is unavailable.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 853,
+        "total_tokens": 913,
+        "completion_tokens": 60,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:50.346357+00:00"
+    },
+    {
+      "case": "Q6",
+      "duration_ms": 5585,
+      "prompt_sha256": "ec4989d544be22e000347a3afb732a2687027f671af2ceda02c120977a03c406",
+      "content": "The temporal sequence provided does suggest a correlation between the belief (claim of service being unavailable) and the decision to allow the action to restart the service, but it does not definitively establish causation.\n\nHere's why:\n\n- **Observation O1** at 10:00:00Z claims the service is unavailable.\n- **Claim C1** at 10:06:00Z, derived from observation O1, states the service is still unavailable.\n- **Action Request A1** at 10:07:00Z is made to restart the service, justified by claim C1.\n- **Policy Result P1** at 10:07:01Z allows the action based on the request.\n- **Harness Result E1** at 10:07:02Z reports the action was successful.\n- **Observation O3** at 10:08:00Z confirms the service is healthy again.\n\nWhile the sequence shows that the claim of the service being unavailable led to an action request which was then allowed and executed successfully, leading to the service becoming healthy again, this alone does not prove causation. For example, other factors could have contributed to the service becoming unavailable or",
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 856,
+        "total_tokens": 1116,
+        "completion_tokens": 260,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:55.931697+00:00"
+    },
+    {
+      "case": "Q7",
+      "duration_ms": 1734,
+      "prompt_sha256": "70e9f1f99c2fe33c1aa8c7ade3c948f97dbb037b7182dcdeab12045d9c5e8852",
+      "content": "Based on the provided synthetic event data, there is no explicit information about whether correcting a belief authorizes a rollback. The events describe an issue with a service being reported as unavailable by one monitor and then resolved through an automated action without any mention of a rollback process or authorization for such a rollback. Therefore, this specific scenario does not provide enough context to determine if correcting a belief would authorize a rollback.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 846,
+        "total_tokens": 927,
+        "completion_tokens": 81,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:57.666385+00:00"
+    },
+    {
+      "case": "Q8",
+      "duration_ms": 2014,
+      "prompt_sha256": "4574406226d3433fe9bec7fcd227d407ccd16b28a06cf9139c8b734c1ddf070e",
+      "content": "Based on the provided timeline, there is no information indicating that observation N1 (\"change freeze remains in effect until 2026-01-02\") becomes obsolete after the service restart actions. The change freeze period mentioned in N1 ends at a future date relative to the events described, and no new information or action has been provided that would make this observation obsolete. Therefore, we cannot conclude that N1 is automatically obsolete from the given data.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 847,
+        "total_tokens": 941,
+        "completion_tokens": 94,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:27:59.680610+00:00"
+    },
+    {
+      "case": "Q9",
+      "duration_ms": 1401,
+      "prompt_sha256": "7726f7a55d3878dadd1d5f4664f5c78dcb5a3525b54040a8912bc922c1d5ba01",
+      "content": "Based on the provided synthetic event data for case ID ST-001, all events are explicitly detailed and there are no inferences that remain UNKNOWN. The sequence of events from service unavailability to its resolution through a service restart is clearly outlined without any gaps or missing information that would lead to unknown inferences.",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 845,
+        "total_tokens": 909,
+        "completion_tokens": 64,
+        "prompt_tokens_details": null
+      },
+      "model": "qwen25-14b-local",
+      "timestamp_utc": "2026-10-15T12:28:01.084409+00:00"
+    }
+  ]
+}

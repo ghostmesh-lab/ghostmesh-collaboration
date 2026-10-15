@@ -1,0 +1,17 @@
+{
+  "study_id": "GM-ST001-OWNER-20261015-MECH-01",
+  "prepared_before_execution": true,
+  "source_revision": "ghostmesh-lab/ghostmesh-collaboration @ 7e69235d385d1578cb6312f25aa02752f7387ede",
+  "frozen_fixture_sha256": "ea1a9a443e3b80d7140dacd8f4869af90e6945c7546ad6cf39dbcb2b89ffbf5d",
+  "derived_input_sha256": "b1da69893a20143b6db8a396ffd0cb69e88df6197f1402c408382b1f2f08bc98",
+  "tests_expected": 30,
+  "method": "Local deterministic positive/negative fixture integrity, evidence graph ancestry, temporal contradiction, reported-execution / authorization boundaries, and synthetic counterfactual mutations.",
+  "acceptance": "All 30 deterministic assertions pass with exact frozen fixture hashes. Any failure reported as failure, not adjusted post hoc.",
+  "limitations": [
+    "An authored deterministic test suite tests its own stated interpretation, not human or AI cognitive skill.",
+    "This is NOT an independent model benchmark, blind scientific replication, deployed GhostMesh runtime test, or demonstration of persistent belief revision.",
+    "Counterfactual inputs are synthetic and created for negative controls, not edited public canonical fixtures.",
+    "Presence of distinct source labels does not prove independent real-world provenance.",
+    "No network/credential/production actions occur."
+  ]
+}

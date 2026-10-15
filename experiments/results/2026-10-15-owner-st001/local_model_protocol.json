@@ -1,0 +1,41 @@
+{
+  "study_id": "GM-ST001-LOCALQWEN-20261015-01",
+  "status": "exploratory preregistered before inference",
+  "repo_head": "7e69235d385d1578cb6312f25aa02752f7387ede",
+  "peer_input_sha256": "b1da69893a20143b6db8a396ffd0cb69e88df6197f1402c408382b1f2f08bc98",
+  "model": "qwen25-14b-local",
+  "backend": "vLLM on owner Hyperion, HTTP localhost:8000",
+  "conditions": [
+    "all nine questions bundled in one turn",
+    "nine independent stateless question turns with identical event data repeated"
+  ],
+  "order": "bundled first, isolated Q1-Q9 second",
+  "randomization": false,
+  "replicates": 1,
+  "temperature": 0,
+  "seed": 42,
+  "max_output_tokens": {
+    "bundled": 2300,
+    "isolated_each": 260
+  },
+  "tools": "none",
+  "predeclared_limits": [
+    "not blind model evaluation",
+    "not persistent belief revision",
+    "not randomized or replicated",
+    "different prompt length/total tokens between arms",
+    "no independent external lab",
+    "could have training contamination"
+  ],
+  "research_questions": [
+    "What evidence establishes service state at T1, T2, and T4?",
+    "Does C1 represent a new independent observation?",
+    "What exactly does P1 prove about authorization? What does it not prove?",
+    "What exactly does E1 prove about execution and success?",
+    "Which observation contradicts the current tense of C1, and why?",
+    "Does temporal sequence establish that the belief *caused* the decision? Why not?",
+    "Does correcting a belief authorize rollback?",
+    "Is the older N1 automatically obsolete?",
+    "Which inferences remain UNKNOWN?"
+  ]
+}
