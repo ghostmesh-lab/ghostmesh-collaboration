@@ -1,0 +1,25 @@
+test_01_baseline_naive_allows_real_file (tests.test_auth001_reference.TestApprovalBindings.test_01_baseline_naive_allows_real_file) ... ok
+test_02_baseline_guarded_allows_real_file (tests.test_auth001_reference.TestApprovalBindings.test_02_baseline_guarded_allows_real_file) ... ok
+test_03_symlink_naive_crosses_boundary (tests.test_auth001_reference.TestApprovalBindings.test_03_symlink_naive_crosses_boundary) ... ok
+test_04_symlink_guarded_denies (tests.test_auth001_reference.TestApprovalBindings.test_04_symlink_guarded_denies) ... ok
+test_05_swapped_root_naive_follows_new_directory (tests.test_auth001_reference.TestApprovalBindings.test_05_swapped_root_naive_follows_new_directory) ... ok
+test_06_swapped_root_guarded_preserves_approved_fd (tests.test_auth001_reference.TestApprovalBindings.test_06_swapped_root_guarded_preserves_approved_fd) ... ok
+test_07_changed_script_naive_path_returns_new_bytes (tests.test_auth001_reference.TestApprovalBindings.test_07_changed_script_naive_path_returns_new_bytes) ... ok
+test_08_changed_script_bound_read_denies (tests.test_auth001_reference.TestApprovalBindings.test_08_changed_script_bound_read_denies) ... ok
+test_09_unchanged_script_bound_read_succeeds (tests.test_auth001_reference.TestApprovalBindings.test_09_unchanged_script_bound_read_succeeds) ... ok
+test_10_preview_collision_replays_naive_grant (tests.test_auth001_reference.TestApprovalBindings.test_10_preview_collision_replays_naive_grant) ... ok
+test_11_full_act_binding_rejects_preview_collision (tests.test_auth001_reference.TestApprovalBindings.test_11_full_act_binding_rejects_preview_collision) ... ok
+test_12_masked_preview_does_not_define_identity (tests.test_auth001_reference.TestApprovalBindings.test_12_masked_preview_does_not_define_identity) ... ok
+test_13_different_revision_must_be_new_grant (tests.test_auth001_reference.TestApprovalBindings.test_13_different_revision_must_be_new_grant) ... ok
+test_14_identical_act_has_stable_identity (tests.test_auth001_reference.TestApprovalBindings.test_14_identical_act_has_stable_identity) ... ok
+test_15_symlink_path_component_rejected (tests.test_auth001_reference.TestApprovalBindings.test_15_symlink_path_component_rejected) ... ok
+test_16_absent_path_is_not_success (tests.test_auth001_reference.TestApprovalBindings.test_16_absent_path_is_not_success) ... ok
+test_17_reported_success_is_not_independent_effect (tests.test_auth001_reference.TestApprovalBindings.test_17_reported_success_is_not_independent_effect) ... ok
+test_18_skipped_security_checks_remain_unobserved (tests.test_auth001_reference.TestApprovalBindings.test_18_skipped_security_checks_remain_unobserved) ... ok
+test_19_valid_allow_still_works_after_positive_ref (tests.test_auth001_reference.TestApprovalBindings.test_19_valid_allow_still_works_after_positive_ref) ... ok
+test_20_approval_does_not_inherit_different_actor (tests.test_auth001_reference.TestApprovalBindings.test_20_approval_does_not_inherit_different_actor) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.379s
+
+OK
