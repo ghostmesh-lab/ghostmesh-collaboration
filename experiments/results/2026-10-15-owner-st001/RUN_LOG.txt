@@ -1,0 +1,35 @@
+test_11_stale_claim_has_one_parent (__main__.EvidenceControls.test_11_stale_claim_has_one_parent) ... ok
+test_12_inherited_claim_not_fresh_measurement (__main__.EvidenceControls.test_12_inherited_claim_not_fresh_measurement) ... ok
+test_13_newer_healthy_observation_challenges_c1 (__main__.EvidenceControls.test_13_newer_healthy_observation_challenges_c1) ... ok
+test_14_freeze_is_not_service_state_contradiction (__main__.EvidenceControls.test_14_freeze_is_not_service_state_contradiction) ... ok
+test_15_removing_o2_removes_preclaim_challenge (__main__.EvidenceControls.test_15_removing_o2_removes_preclaim_challenge) ... ok
+test_16_post_claim_o2_cannot_retroactively_observe_state (__main__.EvidenceControls.test_16_post_claim_o2_cannot_retroactively_observe_state) ... ok
+test_17_non_conflicting_o2_fails_to_challenge_c1 (__main__.EvidenceControls.test_17_non_conflicting_o2_fails_to_challenge_c1) ... ok
+test_18_derived_agent_echoes_do_not_add_root (__main__.EvidenceControls.test_18_derived_agent_echoes_do_not_add_root) ... ok
+test_19_distinct_source_labels_do_not_prove_physical_independence (__main__.EvidenceControls.test_19_distinct_source_labels_do_not_prove_physical_independence) ... ok
+test_20_o1_historical_still_reported_and_not_disproved_by_o2 (__main__.EvidenceControls.test_20_o1_historical_still_reported_and_not_disproved_by_o2) ... ok
+test_21_n1_negative_control_not_automatically_obsolete (__main__.EvidenceControls.test_21_n1_negative_control_not_automatically_obsolete) ... ok
+test_22_policy_record_scoped_to_a1_only (__main__.EvidenceControls.test_22_policy_record_scoped_to_a1_only) ... ok
+test_23_policy_record_does_not_approve_rollback (__main__.EvidenceControls.test_23_policy_record_does_not_approve_rollback) ... ok
+test_24_harness_success_is_report_not_execution_proof (__main__.EvidenceControls.test_24_harness_success_is_report_not_execution_proof) ... ok
+test_25_harness_failure_also_does_not_prove_physical_state (__main__.EvidenceControls.test_25_harness_failure_also_does_not_prove_physical_state) ... ok
+test_26_later_healthy_observation_not_causal_repair_proof (__main__.EvidenceControls.test_26_later_healthy_observation_not_causal_repair_proof) ... ok
+test_27_explicit_false_live_permission (__main__.EvidenceControls.test_27_explicit_false_live_permission) ... ok
+test_28_no_unbounded_unknowns_promoted (__main__.EvidenceControls.test_28_no_unbounded_unknowns_promoted) ... ok
+test_29_missing_ancestor_remains_unknown_not_new_truth (__main__.EvidenceControls.test_29_missing_ancestor_remains_unknown_not_new_truth) ... ok
+test_30_cycle_is_detected_not_resolved_into_false_corrob (__main__.EvidenceControls.test_30_cycle_is_detected_not_resolved_into_false_corrob) ... ok
+test_01_source_exact_digest (__main__.FrozenSource.test_01_source_exact_digest) ... ok
+test_02_derived_exact_golden_digest (__main__.FrozenSource.test_02_derived_exact_golden_digest) ... ok
+test_03_derivation_deterministic (__main__.FrozenSource.test_03_derivation_deterministic) ... ok
+test_04_answers_suppressed (__main__.FrozenSource.test_04_answers_suppressed) ... ok
+test_05_shortcut_kind_labels_normalized (__main__.FrozenSource.test_05_shortcut_kind_labels_normalized) ... ok
+test_06_fixture_still_contains_leakage_and_is_not_a_blind_test (__main__.FrozenSource.test_06_fixture_still_contains_leakage_and_is_not_a_blind_test) ... ok
+test_07_source_mutation_stops_derivation (__main__.FrozenSource.test_07_source_mutation_stops_derivation) ... ok
+test_08_derived_mutation_breaks_golden_hash (__main__.FrozenSource.test_08_derived_mutation_breaks_golden_hash) ... ok
+test_09_source_has_no_live_authority (__main__.FrozenSource.test_09_source_has_no_live_authority) ... ok
+test_10_derived_has_no_live_authority (__main__.FrozenSource.test_10_derived_has_no_live_authority) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.001s
+
+OK
