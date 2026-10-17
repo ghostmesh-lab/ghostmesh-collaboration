@@ -43,6 +43,10 @@ class GrantStore:
         db = sqlite3.connect(self.path, timeout=10, isolation_level=None)
         try:
             yield db
+        except BaseException:
+            # Explicitly roll back partially written synthetic state on any fault.
+            db.rollback()
+            raise
         finally:
             db.close()
 

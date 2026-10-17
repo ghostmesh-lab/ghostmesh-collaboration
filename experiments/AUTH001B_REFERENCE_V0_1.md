@@ -16,11 +16,14 @@ This is a deliberately simplified **SQLite-based toy authorization reference**, 
 - Compare wrong actor, resource, selected input bytes and policy version against the exact grant. Failed attempts must not consume a still-issued grant. Test normal operation as a positive control.
 - Revocation before redemption prevents use; revocation after a **synthetic authorization commit** does not reinterpret historical authorization. This is a chosen local rule, not universal governance.
 - Simulate lost acknowledgement after the database commit. The caller receives `ACK_LOST_EFFECT_UNKNOWN`, while replay is denied. A spent authorization **cannot establish that any real-world effect happened** and does not guarantee exactly-once effects.
+- The extended fault-boundary suite places SQLite `RAISE(ABORT)` triggers **before the state update** and **after the state update but before the audit insert**. Both must roll back the *entire synthetic transaction* and preserve an unspent grant. Reopening the database checks what persisted.
+- An intentionally unsafe two-thread `check-then-set` control accepts the same grant twice; the SQLite reference is contrasted against this falsifier, not treated as immune to all races.
+- Sixteen sampled revoke-versus-redeem races must produce one of two **serial** outcomes. Sampling does not exhaustively enumerate interleavings. Separate granted operations run concurrently to expose simple false denials.
 
 Use:
 
 ```sh
-python3 -m unittest tests.test_auth001b_reference -v
+python3 -m unittest tests.test_auth001b_reference tests.test_auth001b_fault_boundaries -v
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 tools/verify_bundle.py
 python3 tools/check_publication.py
@@ -30,10 +33,10 @@ Record exact tested commit, Python/SQLite versions, fixture/tool SHA-256, test o
 
 ## Counterexamples still required
 
-- Fault injection *inside* a real atomic commit and crash/recovery on disk, not merely losing the response after a successful transaction.
+- Actual OS process termination, power-loss recovery, disk durability under crash and an external independent observer. SQLite trigger aborts are **transactional fault simulations**, not abrupt-process or hardware-failure tests.
 - Actual execution of immutable checked bytes, multi-component path walks, kernel-level race handling, process identity binding, and external effect verification.
-- Revocation and redemption competing truly concurrently, policy version update ordering, multiple replicas, queue retries, partial failures and false-denial rates at scale.
-- Naive reference controls, property-based fuzzing, external peer implementations, independent outcome witnesses and signed source custody.
+- Distributed revocation and authorization consumption, policy-version update ordering, multiple replicas, queue retries, partial effects, and measured false-denial rates at scale. The new thread races share one machine and one SQLite file.
+- Property-based fuzzing, fault coverage across actual execution, external peer implementations, independent outcome witnesses and signed source custody. The deliberately naive control only demonstrates a synthetic double-acceptance failure.
 
 **Risks, containment and rollback:** This branch/PR is review-only public synthetic C1. No live grant, credentials, private data, operational code change, deployments or cross-system permission. Owner can close or revert candidate without Production rollback; public copies cannot be recalled. Formal release, contribution licenses and independent reviewer gates remain open.
 
